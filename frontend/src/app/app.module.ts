@@ -12,6 +12,8 @@ import { ProductComponent } from './page/product/product.component';
 import { OrderComponent } from './page/order/order.component';
 import { IconModule } from './icon/icon.module';
 import { DataTableModule } from './data-table/data-table.module';
+import { CustomerComponent } from './page/customer/customer.component';
+import { BillComponent } from './page/bill/bill.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DataTableModule } from './data-table/data-table.module';
     SidebarComponent,
     HomeComponent,
     ProductComponent,
-    OrderComponent
+    OrderComponent,
+    CustomerComponent,
+    BillComponent
   ],
   imports: [
     BrowserModule,
