@@ -14,6 +14,10 @@ import { IconModule } from './icon/icon.module';
 import { DataTableModule } from './data-table/data-table.module';
 import { CustomerComponent } from './page/customer/customer.component';
 import { BillComponent } from './page/bill/bill.component';
+import { BillEditComponent } from './page/bill-edit/bill-edit.component';
+import { CustomerEditComponent } from './page/customer-edit/customer-edit.component';
+import { OrderEditComponent } from './page/order-edit/order-edit.component';
+import { ProductEditComponent } from './page/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { BillComponent } from './page/bill/bill.component';
     ProductComponent,
     OrderComponent,
     CustomerComponent,
-    BillComponent
+    BillComponent,
+    BillEditComponent,
+    CustomerEditComponent,
+    OrderEditComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
