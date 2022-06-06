@@ -14,8 +14,8 @@ export class ConfigService {
 
   sidebarMenu: IMenuItem[] = [
     {link: '/', title: 'Dashboard', icon: 'home'},
-    {link: '/product', title: 'Products', icon: 'archive'},
-    {link: '/order', title: 'Orders', icon: 'edit2'},
+    {link: '/termekek', title: 'Termékek', icon: 'archive'},
+    {link: '/rendelesek', title: 'Rendelések', icon: 'shopping-cart'},
   ];
 
   productTableColumns: INgxTableColumn[] = [
