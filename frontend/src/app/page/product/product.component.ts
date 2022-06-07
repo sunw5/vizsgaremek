@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Product } from 'src/app/model/product';
 import { ConfigService } from 'src/app/service/config.service';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -16,9 +18,22 @@ export class ProductComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private productService: ProductService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
+  }
+
+  onSelectOne(product: Product): void {
+    this.router.navigate(['/', 'termek-szerkesztes', product._id])
+  }
+
+  onDeleteOne(product: Product): void {
+    if (confirm('Biztosan törli ezt a terméket?')) {
+      this.productService.delete(product._id).subscribe(
+        () => this.list$ = this.productService.getAll()
+      )
+    }
   }
 
 }
