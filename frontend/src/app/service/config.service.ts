@@ -20,10 +20,17 @@ export class ConfigService {
 
   productTableColumns: INgxTableColumn[] = [
     {key: '_id', title: '#'},
-    {key: 'name', title: 'Name'},
-    {key: 'description', title: 'Desc.'},
-    {key: 'price', title: 'Price'},
-    {key: 'active', title: 'Active'},
+    {key: 'Elérhető', title: 'Elérhető'},
+    {key: 'Kiszerelés', title: 'Kiszerelés'},
+    {key: 'Ár', title: 'Ár'},
+    {key: 'Magyar név', title: 'Magyar név'},
+    {key: 'Latin név', title: 'Latin név'},
+    {key: 'Fényigény', title: 'Fényigény'},
+    {key: 'Talajigény', title: 'Talajigény'},
+    {key: 'Habitus', title: 'Habitus'},
+    {key: 'Virág színe', title: 'Virág színe'},
+    {key: 'Egyéb', title: 'Egyéb'},
+
   ];
 
   constructor() { }
