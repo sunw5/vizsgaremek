@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './page/home/home.component';
 import { OrderComponent } from './page/order/order.component';
+import { ProductEditComponent } from './page/product-edit/product-edit.component';
 import { ProductComponent } from './page/product/product.component';
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'termekek',
     component: ProductComponent,
+  },
+  {
+    path: 'termek-szerkesztes/:id',
+    component: ProductEditComponent,
   },
   {
     path: 'rendelesek',
