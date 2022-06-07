@@ -28,4 +28,6 @@
   *ngIf="list$ | async as list"
   [columns]="columns"
   [list]="list"
+  (selectOne)="onSelectOne($event)"
+  (deleteOne)="onDeleteOne($event)">
 ></ngx-data-table>
