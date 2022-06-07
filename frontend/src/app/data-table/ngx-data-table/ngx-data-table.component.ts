@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export interface INgxTableColumn {
   title: string;
   key: string;
@@ -16,6 +15,9 @@ export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnIn
 
   @Input() columns: INgxTableColumn[] = [];
 
+  @Output() selectOne: EventEmitter<T> = new EventEmitter<T>();
+  @Output() deleteOne: EventEmitter<T> = new EventEmitter<T>();
+
   pageSize: number = 10;
 
   startSlice: number = 0;
@@ -29,9 +31,17 @@ export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnIn
     return new Array(pageSize).fill(1).map( (item, index) => index + 1 );
   }
 
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit(): void {
+  }
+
+  onSelect(entity: T): void {
+    this.selectOne.emit(entity);
+  }
+
+  onDelete(entity: T): void {
+    this.deleteOne.emit(entity);
   }
 
   jumpToPage(pageNum: number): void {
