@@ -11,6 +11,23 @@
     <tbody>
       <tr *ngFor="let row of list | slice:startSlice:endSlice">
         <td *ngFor="let col of columns"> {{ row[col.key] }} </td>
+        <td>
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Button group with edit and delete buttons"
+          >
+            <button (click)="onSelect(row)" class="btn btn-warning">
+              <!-- todo -->
+              <i class="fas fa-pencil-alt">edit</i>
+              <!-- <i-feather name="home"></i-feather> -->
+            </button>
+            <button (click)="onDelete(row['_id'])" class="btn btn-danger">
+              <!-- todo -->
+              <i class="">delete</i>
+            </button>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
