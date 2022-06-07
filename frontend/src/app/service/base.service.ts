@@ -30,7 +30,7 @@ export class BaseService<T extends {[key: string]: any, _id: string}>{
     );
   }
 
-  get(id: number): Observable<T> {
+  get(id: string): Observable<T> {
     return this.http.get<T>(`${this.apiUrl}${this.entityName}/${id}`);
   }
 
@@ -45,7 +45,7 @@ export class BaseService<T extends {[key: string]: any, _id: string}>{
     );
   }
 
-  delete(id: number): Observable<T> {
+  delete(id: string): Observable<T> {
     return this.http.delete<T>(`${this.apiUrl}${this.entityName}/${id}`);
   }
 }
