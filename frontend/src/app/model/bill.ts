@@ -1,4 +1,5 @@
 export class Bill {
+  [key: string]: any;
   _id: string = '';
   orderId: string = '';
   price: number = 0;
