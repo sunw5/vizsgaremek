@@ -24,6 +24,11 @@ router.put('/:id', (req, res, next) => {
   return controller.update(req, res, next);
 });
 
+router.patch('/:id', (req, res, next) => {
+  console.log('patch', req.body);
+  return controller.update(req, res, next);
+});
+
 // delete
 router.delete('/:id', (req, res, next) => {
   return controller.delete(req, res, next);
