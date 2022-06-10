@@ -15,7 +15,10 @@ module.exports = (model, populateList = []) => {
         
         findOne: id => model.findById(id).populate(...populateList),
         
-        update: (id, updateData) => model.findByIdAndUpdate(id, updateData, {new: true}),
+        update: (id, updateData) => {
+            console.log('serviceupdate', updateData);
+             return model.findByIdAndUpdate(id, updateData, {new: true}
+                )},
         
         delete: id => model.findByIdAndRemove(id),
     };
