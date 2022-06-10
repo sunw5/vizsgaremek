@@ -62,10 +62,11 @@ module.exports = (model, populates = []) => {
         },
         
         update: (req, res, next) => {
-            const id = req.params.id;
-            if (!checkModel(model, req.body, next)) {
-                return;
-            }
+            
+            // if (!checkModel(model, req.body, next)) {
+            //     console.log('!checkModel');
+            //     return;
+            // }
         
             return currentService.update(req.params.id, req.body)
                 .then(data => {
