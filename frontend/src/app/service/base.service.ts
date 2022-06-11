@@ -39,7 +39,6 @@ export class BaseService<T extends {[key: string]: any, _id: string}>{
   }
 
   update(entity: T): Observable<T> {
-    console.log(entity);
     return this.http.patch<T>(
       `${this.apiUrl}${this.entityName}/${entity._id}`,
       entity
