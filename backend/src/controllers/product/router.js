@@ -25,7 +25,6 @@ router.put('/:id', (req, res, next) => {
 });
 
 router.patch('/:id', (req, res, next) => {
-  console.log('patch', req.body);
   return controller.update(req, res, next);
 });
 
