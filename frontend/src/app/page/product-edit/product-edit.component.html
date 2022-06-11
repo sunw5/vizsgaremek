@@ -1,7 +1,7 @@
 {{ product$ | async | json }}
 <div class="row">
   <div class="col-md-6 col-sm-8">
-    <div class="card">
+    <div *ngIf=" product$ | async as product" class="card">
       <div class="card-header card-header-primary">
         <h4 class="card-title" *ngIf="product$ | async">Edit product</h4>
         <h4 class="card-title" *ngIf="!(product$ | async)">Add New product</h4>
@@ -74,10 +74,10 @@
               <input
                 type="radio"
                 class="form-check-input"
-                id="new"
-                name="['Elérhető']"
+                id="activeTrue"
+                name='activeTrue'
                 [(ngModel)]="product['Elérhető']"
-                value="true"
+                [value]=true
               />
               Igen
               <span class="circle">
@@ -90,11 +90,10 @@
               <input
                 type="radio"
                 class="form-check-input"
-                id="paid"
-                name="['Elérhető']"
+                id="activeFalse"
+                name='activeFalse'
                 [(ngModel)]="product['Elérhető']"
-                value="false"
-
+                [value]=false
               />
               Nem
               <span class="circle">
@@ -111,19 +110,19 @@
               id="price"
               name="price"
               [(ngModel)]="product['Ár']"
-              #amount="ngModel"
+              #price="ngModel"
               required
               pattern="^[1-9][0-9]*$"
               min="1"
             />
             <div
-              *ngIf="amount.invalid && (amount.dirty || amount.touched)"
+              *ngIf="price.invalid && (price.dirty || price.touched)"
               class="alert"
             >
-              <div *ngIf="amount.errors?.['pattern']">
+              <div *ngIf="price.errors?.['pattern']">
                 Kérem adjon meg egy pozitív egész számot!
               </div>
-              <div *ngIf="amount.errors?.['required']">
+              <div *ngIf="price.errors?.['required']">
                 Az ár megadása kötelező!
               </div>
             </div>
@@ -141,14 +140,14 @@
               pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)*$"
             />
             <div
-              *ngIf="nameLat.invalid && (nameLat.dirty || nameLat.touched)"
+              *ngIf="light.invalid && (light.dirty || light.touched)"
               class="alert"
             >
-              <div *ngIf="nameLat.errors?.['pattern']">
+              <div *ngIf="light.errors?.['pattern']">
                 Kérjük, csak magyar betüket tartalmazó szavakat írjon be!
                 Szóköz csak a szavak között lehet!
               </div>
-              <div *ngIf="nameLat.errors?.['required']">
+              <div *ngIf="light.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
               </div>
             </div>
@@ -163,7 +162,7 @@
               name="lasting"
               [(ngModel)]="product['Tenyészidő']"
               #lasting="ngModel"
-              pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)*$"
+              pattern="^[1-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)*$"
             />
             <div
               *ngIf="lasting.invalid && (lasting.dirty || lasting.touched)"
@@ -245,8 +244,8 @@
               class="alert"
             >
               <div *ngIf="fullheight.errors?.['pattern']">
-                Kérjük, csak magyar betüket tartalmazó szavakat és számot írjon be!
-                Szóköz csak a szavak között lehet!
+                Kérjük, adjon meg magasságot számmal majd adja meg a mértékegységet magyar betükkel!
+                Szóköz csak a szavak, számok között lehet! Pl.: 1 - 5 méter
               </div>
               <div *ngIf="fullheight.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -357,7 +356,7 @@
           <div class="text-right">
             <button
               [disabled]="productForm.invalid"
-              *ngIf="product$ | async"
+              *ngIf="product['_id'] != 'new'"
               (click)="onUpdate(product, productForm)"
               type="submit"
               class="btn btn-primary"
@@ -366,7 +365,7 @@
             </button>
             <button
               [disabled]="productForm.invalid"
-              *ngIf="!(product$ | async)"
+              *ngIf="product['_id'] == 'new'"
               (click)="onCreate(product)"
               type="submit"
               class="btn btn-primary"
