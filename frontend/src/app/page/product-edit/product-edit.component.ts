@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, of, switchMap } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -12,7 +12,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductEditComponent implements OnInit {
   product$!: Observable<Product>;
-  product: Product = new Product();
+  // product: Product = new Product();
 
   constructor(
     private productService: ProductService,
@@ -22,11 +22,14 @@ export class ProductEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.product$ = this.aRoute.params.pipe(
-      switchMap((params) => this.productService.get(params['id']))
+      switchMap((params) => {
+        if (params['id'] === 'new') return of(new Product());
+        return this.productService.get(params['id'])
+      })
     );
-    this.product$.subscribe((data) => {
-      if (data) this.product = data;
-    });
+    // this.product$.subscribe((data) => {
+    //   if (data) this.product = data;
+    // });
   }
 
   onCreate(product: Product) {
@@ -36,7 +39,6 @@ export class ProductEditComponent implements OnInit {
   }
 
   onUpdate(product: Product, form: NgForm) {
-    console.log(product);
     this.productService
       .update(product)
       .subscribe((product) => this.router.navigate(['/', 'termekek']));
