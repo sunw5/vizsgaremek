@@ -18,13 +18,10 @@
             aria-label="Button group with edit and delete buttons"
           >
             <button (click)="onSelect(row)" class="btn btn-warning">
-              <!-- todo -->
-              <i class="fas fa-pencil-alt">edit</i>
-              <!-- <i-feather name="home"></i-feather> -->
+              <i-feather name="edit2"></i-feather>
             </button>
-            <button (click)="onDelete(row['_id'])" class="btn btn-danger">
-              <!-- todo -->
-              <i class="">delete</i>
+            <button (click)="onDelete(row)" class="btn btn-danger">
+              <i-feather name="trash"></i-feather>
             </button>
           </div>
         </td>
@@ -38,7 +35,7 @@
       class="page-link"
       (click)="jumpToPage(page-1)"
       [disabled]="page === 1"
-    >Prev.</button></li>
+    >Előző</button></li>
     <li
       *ngFor="let pageNum of pageList"
       class="page-item"
@@ -50,6 +47,6 @@
       class="page-link"
       (click)="jumpToPage(page+1)"
       [disabled]="page === pageList.length"
-    >Next</button></li>
+    >Következő</button></li>
   </ul>
 </nav>
