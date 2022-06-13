@@ -1,5 +1,7 @@
+import { CustomerEditComponent } from './page/customer-edit/customer-edit.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CustomerComponent } from './page/customer/customer.component';
 import { HomeComponent } from './page/home/home.component';
 import { OrderComponent } from './page/order/order.component';
 import { ProductEditComponent } from './page/product-edit/product-edit.component';
@@ -17,6 +19,14 @@ const routes: Routes = [
   {
     path: 'termek-szerkesztes/:id',
     component: ProductEditComponent,
+  },
+  {
+    path: 'vasarlok',
+    component: CustomerComponent,
+  },
+  {
+    path: 'vasarlo-szerkesztes/:id',
+    component: CustomerEditComponent,
   },
   {
     path: 'rendelesek',
