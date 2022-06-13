@@ -15,6 +15,7 @@ export class ConfigService {
   sidebarMenu: IMenuItem[] = [
     {link: '/', title: 'Dashboard', icon: 'home'},
     {link: '/termekek', title: 'Termékek', icon: 'archive'},
+    {link: '/vasarlok', title: 'Vásárlók', icon: 'archive'},
     {link: '/rendelesek', title: 'Rendelések', icon: 'shopping-cart'},
   ];
 
@@ -30,6 +31,17 @@ export class ConfigService {
     {key: 'Habitus', title: 'Habitus'},
     {key: 'Virág színe', title: 'Virág színe'},
     {key: 'Egyéb', title: 'Egyéb'},
+
+  ];
+
+  customerTableColumns: INgxTableColumn[] = [
+    {key: '_id', title: '#'},
+    {key: 'firstName', title: 'Vezetéknév'},
+    {key: 'lastName', title: 'Keresztnév'},
+    {key: 'addressBill', title: 'Számlázási cím'},
+    {key: 'addressShip', title: 'Szállítási cím'},
+    {key: 'email', title: 'Email'},
+    {key: 'phone', title: 'Telefon'},
 
   ];
 
