@@ -1,0 +1,242 @@
+[
+  {
+    "lastName": "Kiss",
+    "firstName": "István",
+    "addressBill": {
+      "zip": 1111,
+      "city": "Budapest",
+      "street": "Nagy László utca 35."
+    },
+    "addressShip": {
+      "zip": 1111,
+      "city": "Budapest",
+      "street": "Nagy László utca 35."
+    },    
+    "email": "kissi@gmail.com",
+    "phone": "+36303336666"    
+  },
+  {
+    "lastName": "Héder",
+    "firstName": "Elek",
+    "addressBill": {
+      "zip": 1310,
+      "city": "Budapest",
+      "street": "Vértes utca 3."
+    },
+    "addressShip": {
+      "zip": 1310,
+      "city": "Budapest",
+      "street": "Vértes utca 3."
+    },    
+    "email": "helek@gmail.com",
+    "phone": "+36303358766"    
+  },
+  {
+    "lastName": "Kiss",
+    "firstName": "Edina",
+    "addressBill": {
+      "zip": 6000,
+      "city": "Kecskemét",
+      "street": "Kossuth utca 49."
+    },
+    "addressShip": {
+      "zip": 6000,
+      "city": "Kecskemét",
+      "street": "Kossuth utca 49."
+    },    
+    "email": "kiss.edina@gmail.com",
+    "phone": "+36301135879"    
+  },
+  {
+    "lastName": "Péter",
+    "firstName": "Olga",
+    "addressBill": {
+      "zip": 6000,
+      "city": "Kecskemét",
+      "street": "Torma utca 1."
+    },
+    "addressShip": {
+      "zip": 6000,
+      "city": "Kecskemét",
+      "street": "Torma utca 1."
+    },    
+    "email": "polga@gmail.com",
+    "phone": "+36704568876"    
+  },
+  {
+    "lastName": "Kocsis",
+    "firstName": "Viola",
+    "addressBill": {
+      "zip": 5600,
+      "city": "Békéscsaba",
+      "street": "Orosházi út 15."
+    },
+    "addressShip": {
+      "zip": 5600,
+      "city": "Békéscsaba",
+      "street": "Orosházi út 15."
+    },    
+    "email": "kv5@gmail.com",
+    "phone": "+36704611769"    
+  },
+  {
+    "lastName": "Kovacsics",
+    "firstName": "Jenő",
+    "addressBill": {
+      "zip": 6726,
+      "city": "Szeged",
+      "street": "Hársfa  út 7."
+    },
+    "addressShip": {
+      "zip": 6726,
+      "city": "Szeged",
+      "street": "Hársfa  út 7."
+    },    
+    "email": "kj701203@gmail.com",
+    "phone": "+36701234567"    
+  },
+  {
+    "lastName": "Vigh",
+    "firstName": "Viola",
+    "addressBill": {
+      "zip": 6726,
+      "city": "Szeged",
+      "street": "Piroska  út 72."
+    },
+    "addressShip": {
+      "zip": 6726,
+      "city": "Szeged",
+      "street": "Piroska  út 72."
+    },    
+    "email": "vv@gmail.com",
+    "phone": "+36701234666"    
+  },
+  {
+    "lastName": "László",
+    "firstName": "Zoltán",
+    "addressBill": {
+      "zip": 7621,
+      "city": "Pécs",
+      "street": "Széchenyi tér 1/A."
+    },
+    "addressShip": {
+      "zip": 7621,
+      "city": "Pécs",
+      "street": "Széchenyi tér 1/A."
+    },    
+    "email": "lzoli@gmail.com",
+    "phone": "+36207654321"    
+  },
+  {
+    "lastName": "Takács",
+    "firstName": "Edit",
+    "addressBill": {
+      "zip": 9011,
+      "city": "Győr",
+      "street": "Dunasor út 54/A."
+    },
+    "addressShip": {
+      "zip": 9011,
+      "city": "Győr",
+      "street": "Dunasor út 54/A."
+    },    
+    "email": "tedit9@gmail.com",
+    "phone": "+36207776655"    
+  },
+  {
+    "lastName": "Szabó",
+    "firstName": "Éva",
+    "addressBill": {
+      "zip": 3905,
+      "city": "Monok",
+      "street": "Nagy út 44."
+    },
+    "addressShip": {
+      "zip": 3905,
+      "city": "Monok",
+      "street": "Nagy út 44."
+    },    
+    "email": "szabo56@gmail.com",
+    "phone": "+36207788995"    
+  },
+  {
+    "lastName": "Horváth",
+    "firstName": "József",
+    "addressBill": {
+      "zip": 1212,
+      "city": "Budapest",
+      "street": "Váci út 444/B."
+    },
+    "addressShip": {
+      "zip": 1212,
+      "city": "Budapest",
+      "street": "Váci út 444/B."
+    },    
+    "email": "jozsi8@gmail.com",
+    "phone": "+36207338995"    
+  },
+  {
+    "lastName": "Vági",
+    "firstName": "Antal",
+    "addressBill": {
+      "zip": 1233,
+      "city": "Budapest",
+      "street": "Váci út 77."
+    },
+    "addressShip": {
+      "zip": 1233,
+      "city": "Budapest",
+      "street": "Váci út 77."
+    },    
+    "email": "vagia@gmail.com",
+    "phone": "+36201155998"    
+  },
+  {
+    "lastName": "Mérő",
+    "firstName": "Róbert",
+    "addressBill": {
+      "zip": 1913,
+      "city": "Budapest",
+      "street": "Kondorosi út 125."
+    },
+    "addressShip": {
+      "zip": 1913,
+      "city": "Budapest",
+      "street": "Kondorosi út 125."
+    },    
+    "email": "robika5@gmail.com",
+    "phone": "+36206859471"    
+  },
+  {
+    "lastName": "Nagy",
+    "firstName": "Kálmán",
+    "addressBill": {
+      "zip": 3534,
+      "city": "Miskolc",
+      "street": "Csabai kapu 15."
+    },
+    "addressShip": {
+      "zip": 3534,
+      "city": "Miskolc",
+      "street": "Csabai kapu 15."
+    },    
+    "email": "nagyk@gmail.com",
+    "phone": "+36304446655"    
+  },
+  {
+    "lastName": "Kiss",
+    "firstName": "Liza",
+    "addressBill": {
+      "zip": 3525,
+      "city": "Miskolc",
+      "street": "Bükk utca 15."
+    },
+    "addressShip": {
+      "zip": 3525,
+      "city": "Miskolc",
+      "street": "Bükk utca 15."
+    },    
+    "email": "kicsi@gmail.com",
+    "phone": "+36306895324"    
+  }
+]
