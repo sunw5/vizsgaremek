@@ -6,7 +6,7 @@ module.exports = (model, populateList = []) => {
       return entity.save();
     },
 
-    findAll: () => model.find().populate(...populateList),
+    findAll: () => model.find().sort({"_id":1}).populate(...populateList),
 
     findOne: (id) => model.findById(id).populate(...populateList),
 
