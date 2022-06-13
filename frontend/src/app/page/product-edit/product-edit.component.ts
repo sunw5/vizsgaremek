@@ -41,7 +41,10 @@ export class ProductEditComponent implements OnInit {
   onUpdate(product: Product, form: NgForm) {
     this.productService
       .update(product)
-      .subscribe((product) => this.router.navigate(['/', 'termekek']));
+      .subscribe({
+        next: (product) => this.router.navigate(['/', 'termekek']),
+        error: (err) => console.error(err),
+      });
   }
 
 }
