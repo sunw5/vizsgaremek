@@ -29,8 +29,8 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-// Products
 app.use('/product', require('./controllers/product/router'));
+app.use('/customer', require('./controllers/customer/router'));
 app.use('/login', require('./controllers/login/router'));
 
 app.use('/', (req, res) => {
