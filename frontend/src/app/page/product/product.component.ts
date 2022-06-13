@@ -7,10 +7,9 @@ import { ProductService } from 'src/app/service/product.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-
   columns = this.config.productTableColumns;
 
   list$ = this.productService.getAll();
@@ -18,22 +17,21 @@ export class ProductComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private productService: ProductService,
-    private router: Router,
-  ) { }
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSelectOne(product: Product): void {
-    this.router.navigate(['/', 'termek-szerkesztes', product._id])
+    this.router.navigate(['/', 'termek-szerkesztes', product._id]);
   }
 
   onDeleteOne(product: Product): void {
     if (confirm('Biztosan törli ezt a terméket?')) {
-      this.productService.delete(product._id).subscribe(
-        () => this.list$ = this.productService.getAll()
-      )
+      this.productService.delete(product._id).subscribe({
+        next: () => (this.list$ = this.productService.getAll()),
+        error: (err) => console.error(err),
+      });
     }
   }
-
 }
