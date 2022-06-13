@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const ProductSchema = mongoose.Schema({
     "Magyar név": {
         type: String,
-        required: true,
+        required: false,
     },    
     "Elérhető": {
         type: Boolean,
