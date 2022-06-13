@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const seed = require('./seed/seeder');
 
 const app = express();
 
@@ -12,10 +13,11 @@ mongoose
   .connect(`mongodb+srv://${host}`, {
     user,
     pass,
+    dbName: 'VR',
   })
   .then((conn) => {
     console.log('Connection success!');
-    // require('./seed/seeder'); // One time seed - uncomment to seed database   
+    // seed(); // One time seed - uncomment to seed database     
   })
   .catch((err) => {
     // throw new Error(err.message);

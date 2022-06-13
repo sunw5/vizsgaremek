@@ -1,18 +1,29 @@
 const fsp = require('fs').promises;
 const { join } = require('path');
-const ProductModel = require('../models/product.model');
+const product = require('../models/product.model');
+const customer = require('../models/customer.model');
 
-(async () => {
-  try {
+const modelsToSeed = [customer];
 
-    // Product
-    const data = await fsp.readFile(join(__dirname, 'product.json'), 'utf8');    
-    const product = JSON.parse(data);
-    await ProductModel.insertMany(product);
-    console.log('Successfully seeded database with products');
+const seed = async () => {
+  for (const model of modelsToSeed) {
+    try {
+      // const dropResult = await conn.connection.db.dropCollection('products');
+      const dropResult = await model.collection.drop();
 
-  } catch (error) {
-    console.error(error);
+      const data = await fsp.readFile(
+        join(__dirname, `${model.modelName.toLowerCase()}.json`),
+        'utf8'
+      );
+      const parsedData = JSON.parse(data);
+      await model.insertMany(parsedData);
+      console.log(
+        `Successfully seeded database with ${model.modelName.toLowerCase()}`
+      );
+    } catch (error) {
+      console.error(error);
+    }
   }
-}
-)();
+};
+
+module.exports = seed;
