@@ -1,7 +1,0 @@
-{
-    "database": {
-        "user": "dbUser",
-        "pass": "",
-        "host": "cluster0.7ubej.mongodb.net/?retryWrites=true&w=majority"
-    }
-}
