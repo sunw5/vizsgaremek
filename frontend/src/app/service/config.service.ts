@@ -15,7 +15,7 @@ export class ConfigService {
   sidebarMenu: IMenuItem[] = [
     {link: '/', title: 'Dashboard', icon: 'home'},
     {link: '/termekek', title: 'Termékek', icon: 'archive'},
-    {link: '/vasarlok', title: 'Vásárlók', icon: 'archive'},
+    {link: '/vasarlok', title: 'Vásárlók', icon: 'user'},
     {link: '/rendelesek', title: 'Rendelések', icon: 'shopping-cart'},
   ];
 
