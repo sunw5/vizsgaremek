@@ -6,11 +6,16 @@ import { HomeComponent } from './page/home/home.component';
 import { OrderComponent } from './page/order/order.component';
 import { ProductEditComponent } from './page/product-edit/product-edit.component';
 import { ProductComponent } from './page/product/product.component';
+import { LoginComponent } from './page/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'termekek',
