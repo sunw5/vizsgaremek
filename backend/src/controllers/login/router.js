@@ -1,40 +1,81 @@
 const express = require('express');
-const User = require('../../models/user');
-
 const router = express.Router();
+
+const User = require('../../models/user');
+const jwt = require('jsonwebtoken');
 
 // post
 router.post('/', async (req, res, next) => {
-    // const newUser = new User({
-    //     email: 'test@test.hu',
-    //     lastName: 'Elek',
-    //     firstName: 'Test',
-    //     password: 'test789',
-    // });
+  /* 
+  // seed the database, created by Jozsi's script
+  const newUser = new User({
+        email: 'test@test.hu',
+        lastName: 'Elek',
+        firstName: 'Test',
+        password: 'test789',
+    });
 
-    // try {
-    //     await newUser.save();
-    // } catch(e) {
-    //     res.statusCode = 401;
-    //     return res.json({error: 'Database Error!'});
-    // }
+    try {
+        await newUser.save();
+    } catch(e) {
+        res.statusCode = 401;
+        return res.json({error: 'Database Error!'});
+    }
+    return res.json({message: 'user created'});
+ */
 
-    // return res.json({message: 'user created'});
+  /* 
+  // seed the database, created by Gabor's script
+  const user = new User({
+    firstName: 'Jill',
+    lastName: 'Doe',
+    email: 'jilldoe@gmail.com',
+    password: '123',
+  });
+  user
+    .save()
+    .then((result) => {
+      res.json({
+        message: 'User created!',
+        result,
+      });
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+*/
 
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
+  const { email, password } = req.body;
+  const user = await User.findOne({ email });
 
-    if (!user) {
-        return res.sendStatus(401);
+  if (!user) {
+    return res.sendStatus(401);
+  }
+
+  user.comparePassword(password, function (err, isMatch) {
+    if (err) {
+      return res.sendStatus(401);
     }
 
-    user.comparePassword(password, function(err, isMatch) {
-        if (err) {
-            return res.sendStatus(403);
-        }
+    const accessToken = jwt.sign(
+      {
+        _id: user._id,
+        email: user.email,
+        role: 1,
+      },
+      'egynagyontitkosszöveg',
+      {
+        expiresIn: '1h',
+      }
+    );
 
-        res.json({ success: true });
+    res.json({
+      success: true,
+      accessToken,
+      user: { ...user._doc, password: '' },
     });
+  });
 });
 
 module.exports = router;
@@ -48,4 +89,20 @@ fetch('http://localhost:3000/login', {
     body: '{"email": "test@test.hu", "password": "test789"}',
 }).then(r => r.json())
     .then( d => console.log(d) );
+*/
+
+/* 
+// get token
+fetch('http://localhost:3000/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+  firstName: 'John',
+  lastName: 'Doe',
+  email: 'johndoe@gmail.com',
+  password: '123',
+})
+}).then(res=>res.json()).then(res=>console.log(res)) 
 */
