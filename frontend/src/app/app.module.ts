@@ -19,6 +19,7 @@ import { BillEditComponent } from './page/bill-edit/bill-edit.component';
 import { CustomerEditComponent } from './page/customer-edit/customer-edit.component';
 import { OrderEditComponent } from './page/order-edit/order-edit.component';
 import { ProductEditComponent } from './page/product-edit/product-edit.component';
+import { LoginComponent } from './page/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProductEditComponent } from './page/product-edit/product-edit.component
     BillEditComponent,
     CustomerEditComponent,
     OrderEditComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
