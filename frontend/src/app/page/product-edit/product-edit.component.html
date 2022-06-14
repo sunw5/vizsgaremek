@@ -237,7 +237,7 @@
               name="fullheight"
               [(ngModel)]="product['Teljes magasság']"
               #fullheight="ngModel"
-              pattern="^[1-9][0-9 -]+( [A-Za-záéíóöőúüű]+)*$"
+              pattern="^[1-9][0-9 -]*( [A-Za-záéíóöőúüű]+)*$"
             />
             <div
               *ngIf="fullheight.invalid && (fullheight.dirty || fullheight.touched)"
