@@ -1,0 +1,86 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johndoe@gmail.com",
+    "role": "3",
+    "password": "test"
+  },
+  {
+    "firstName": "Jill",
+    "lastName": "Doe",
+    "email": "jilldoe@gmail.com",
+    "role": "2",
+    "password": "test"
+  },
+  {
+    "firstName": "Kiss",
+    "lastName": "Jakab",
+    "email": "kissjakab@gmail.com",
+    "role": "1",
+    "password": "test"
+  },
+  {
+    "firstName": "Merényi",
+    "lastName": "Viktoria",
+    "email": "merenyiviki@gmail.com",
+    "role": "2",
+    "password": "test"
+  },
+  {
+    "firstName": "Kontz",
+    "lastName": "Ádám",
+    "email": "kontz.á@yahoo.com",
+    "role": "3",
+    "password": "test"
+  },
+  {
+    "firstName": "Sipos",
+    "lastName": "Soma",
+    "email": "sipos.soma@gmail.com",
+    "role": "2",
+    "password": "test"
+  },
+  {
+    "firstName": "Szőke",
+    "lastName": "Gitta",
+    "email": "szőkeg@hotmail.com",
+    "role": "3",
+    "password": "test"
+  },
+  {
+    "firstName": "Székely",
+    "lastName": "Kevin",
+    "email": "kszekely@gmail.com",
+    "role": "1",
+    "password": "test"
+  },
+  {
+    "firstName": "Novák",
+    "lastName": "Beatrix",
+    "email": "nbeatrix@yahoo.com",
+    "role": "1",
+    "password": "test"
+  },
+  {
+    "firstName": "Szilágyi",
+    "lastName": "Maja",
+    "email": "szmaja@yahoo.com",
+    "role": "3",
+    "password": "test"
+  },
+  {
+    "firstName": "Ármin",
+    "lastName": "László",
+    "email": "larmin@hotmail.com",
+    "role": "2",
+    "password": "test"
+  },
+  {
+    "firstName": "Bence",
+    "lastName": "Pál",
+    "email": "b.pal@gmail.com",
+    "role": "1",
+    "password": "test"
+  }
+]
