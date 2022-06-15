@@ -46,7 +46,7 @@ router.post('/', async (req, res, next) => {
     });
 */
 
-  const { email, password } = req.body;
+  const { email, password, role } = req.body;
   const user = await User.findOne({ email });
 
   if (!user) {
@@ -62,9 +62,9 @@ router.post('/', async (req, res, next) => {
       {
         _id: user._id,
         email: user.email,
-        role: 1,
+        role,
       },
-      'egynagyontitkosszöveg',
+      process.env.ACCESS_TOKEN_SECRET,
       {
         expiresIn: '1h',
       }
