@@ -1,0 +1,506 @@
+[{
+    "zip": "8856",
+    "city": "Hódmezővásárhely",
+    "street": "Nemes sor 7."
+  },
+  {
+    "zip": "2752",
+    "city": "Budapest",
+    "street": "Maja lépcső 441."
+  },
+  {
+    "zip": "4142",
+    "city": "Budapest",
+    "street": "Balázs útja 257."
+  },
+  {
+    "zip": "2623",
+    "city": "Siófok",
+    "street": "Ottó fasor 49."
+  },
+  {
+    "zip": "7032",
+    "city": "Budapest",
+    "street": "Szervác part 925."
+  },
+  {
+    "zip": "3947",
+    "city": "Budapest",
+    "street": "Barna sugárút 41."
+  },
+  {
+    "zip": "0427",
+    "city": "Budapest",
+    "street": "Márton rakpart 8."
+  },
+  {
+    "zip": "7576",
+    "city": "Szolnok",
+    "street": "Pintér tere 901."
+  },
+  {
+    "zip": "6475",
+    "city": "Budapest",
+    "street": "Balla kert 87."
+  },
+  {
+    "zip": "3052",
+    "city": "Baja",
+    "street": "Dorottya utca 91."
+  },
+  {
+    "zip": "2212",
+    "city": "Nagykálló",
+    "street": "Jenő orom 29."
+  },
+  {
+    "zip": "0283",
+    "city": "Kunhegyes",
+    "street": "Nagy part 64."
+  },
+  {
+    "zip": "5913",
+    "city": "Budapest",
+    "street": "Ádám útja 379."
+  },
+  {
+    "zip": "9964",
+    "city": "Nyíregyháza",
+    "street": "Virág rakpart 1."
+  },
+  {
+    "zip": "9943",
+    "city": "Budapest",
+    "street": "Linda országút 1."
+  },
+  {
+    "zip": "5612",
+    "city": "Budapest",
+    "street": "Hajdu üdülőpart 5."
+  },
+  {
+    "zip": "1697",
+    "city": "Budapest",
+    "street": "Panna utca 24."
+  },
+  {
+    "zip": "6832",
+    "city": "Budapest",
+    "street": "Olívia körönd 1."
+  },
+  {
+    "zip": "6676",
+    "city": "Budapest",
+    "street": "Linda út 7."
+  },
+  {
+    "zip": "6658",
+    "city": "Nagykanizsa",
+    "street": "Vörös park 9."
+  },
+  {
+    "zip": "8982",
+    "city": "Budapest",
+    "street": "Kossuth út 1."
+  },
+  {
+    "zip": "3369",
+    "city": "Budapest",
+    "street": "Katinka üdülőpart 2."
+  },
+  {
+    "zip": "9374",
+    "city": "Sopron",
+    "street": "Marianna országút 132."
+  },
+  {
+    "zip": "2553",
+    "city": "Győr",
+    "street": "Péter utca 094."
+  },
+  {
+    "zip": "1762",
+    "city": "Budapest",
+    "street": "Barna dűlőút 00."
+  },
+  {
+    "zip": "1862",
+    "city": "Békéscsaba",
+    "street": "Németh körtér 39."
+  },
+  {
+    "zip": "2794",
+    "city": "Salgótarján",
+    "street": "Albert lakótelep 6."
+  },
+  {
+    "zip": "0644",
+    "city": "Budapest",
+    "street": "Takács gát 50."
+  },
+  {
+    "zip": "8708",
+    "city": "Debrecen",
+    "street": "Szekeres orom 02."
+  },
+  {
+    "zip": "3946",
+    "city": "Budapest",
+    "street": "Míra dűlősor 430."
+  },
+  {
+    "zip": "6119",
+    "city": "Budapest",
+    "street": "Áron lejtő 99."
+  },
+  {
+    "zip": "8650",
+    "city": "Tiszakécske",
+    "street": "Léna turistaút 895."
+  },
+  {
+    "zip": "5320",
+    "city": "Pécs",
+    "street": "Mátyás fasor 8."
+  },
+  {
+    "zip": "6611",
+    "city": "Budapest",
+    "street": "Pásztor út 840."
+  },
+  {
+    "zip": "0111",
+    "city": "Budapest",
+    "street": "Fábián út 60."
+  },
+  {
+    "zip": "7088",
+    "city": "Debrecen",
+    "street": "Pál orom 85."
+  },
+  {
+    "zip": "0140",
+    "city": "Bácsalmás",
+    "street": "Máté part 091."
+  },
+  {
+    "zip": "0772",
+    "city": "Szigetszentmiklós",
+    "street": "Sándor kert 84."
+  },
+  {
+    "zip": "5004",
+    "city": "Szeged",
+    "street": "Ramóna erdősor 87."
+  },
+  {
+    "zip": "5563",
+    "city": "Tatabánya",
+    "street": "Ádám sétány 61."
+  },
+  {
+    "zip": "6822",
+    "city": "Budapest",
+    "street": "Zsombor part 158."
+  },
+  {
+    "zip": "5600",
+    "city": "Budapest",
+    "street": "Boglárka rakpart 04."
+  },
+  {
+    "zip": "1858",
+    "city": "Budapest",
+    "street": "Sipos híd 4."
+  },
+  {
+    "zip": "8545",
+    "city": "Budapest",
+    "street": "Németh sétány 523."
+  },
+  {
+    "zip": "3931",
+    "city": "Budapest",
+    "street": "Hegedűs dűlőút 755."
+  },
+  {
+    "zip": "1432",
+    "city": "Záhony",
+    "street": "Gréta orom 04."
+  },
+  {
+    "zip": "4319",
+    "city": "Budapest",
+    "street": "Székely körönd 36."
+  },
+  {
+    "zip": "8604",
+    "city": "Sásd",
+    "street": "Klaudia erdősor 33."
+  },
+  {
+    "zip": "4107",
+    "city": "Budapest",
+    "street": "Patrik utca 9."
+  },
+  {
+    "zip": "0460",
+    "city": "Érd",
+    "street": "Sándor lejáró 39."
+  },
+  {
+    "zip": "4238",
+    "city": "Békéscsaba",
+    "street": "Farkas átjáró 251."
+  },
+  {
+    "zip": "5453",
+    "city": "Cegléd",
+    "street": "Varga körtér 00."
+  },
+  {
+    "zip": "2179",
+    "city": "Kecskemét",
+    "street": "Máté dűlőút 376."
+  },
+  {
+    "zip": "3729",
+    "city": "Budapest",
+    "street": "Erzsébet átjáró 883."
+  },
+  {
+    "zip": "9605",
+    "city": "Szombathely",
+    "street": "Balázs sor 12."
+  },
+  {
+    "zip": "4262",
+    "city": "Veszprém",
+    "street": "Ernő forduló 26."
+  },
+  {
+    "zip": "4665",
+    "city": "Budapest",
+    "street": "Mia rakpart 492."
+  },
+  {
+    "zip": "7232",
+    "city": "Kemecse",
+    "street": "Kevin útja 5."
+  },
+  {
+    "zip": "6474",
+    "city": "Budapest",
+    "street": "Míra part 73."
+  },
+  {
+    "zip": "7545",
+    "city": "Budapest",
+    "street": "Balázs turistaút 13."
+  },
+  {
+    "zip": "2116",
+    "city": "Budapest",
+    "street": "Georgina rakpart 68."
+  },
+  {
+    "zip": "8012",
+    "city": "Budapest",
+    "street": "Juhász fasor 6."
+  },
+  {
+    "zip": "7453",
+    "city": "Budapest",
+    "street": "Lakatos kert 33."
+  },
+  {
+    "zip": "2642",
+    "city": "Tatabánya",
+    "street": "Mirella köz 37."
+  },
+  {
+    "zip": "4832",
+    "city": "Budapest",
+    "street": "Veres körtér 42."
+  },
+  {
+    "zip": "6587",
+    "city": "Budapest",
+    "street": "Szonja sétány 80."
+  },
+  {
+    "zip": "3587",
+    "city": "Veszprém",
+    "street": "Richárd játszótér 46."
+  },
+  {
+    "zip": "2548",
+    "city": "Budapest",
+    "street": "Hanga gát 0."
+  },
+  {
+    "zip": "8500",
+    "city": "Budapest",
+    "street": "Bognár turistaút 0."
+  },
+  {
+    "zip": "0272",
+    "city": "Dunaújváros",
+    "street": "Dorián köz 4."
+  },
+  {
+    "zip": "5758",
+    "city": "Zalaegerszeg",
+    "street": "Gizella lejáró 2."
+  },
+  {
+    "zip": "6796",
+    "city": "Hódmezővásárhely",
+    "street": "Ármin utca 3."
+  },
+  {
+    "zip": "7999",
+    "city": "Zirc",
+    "street": "Panna játszótér 075."
+  },
+  {
+    "zip": "8313",
+    "city": "Nagykanizsa",
+    "street": "Pál tere 67."
+  },
+  {
+    "zip": "1980",
+    "city": "Szolnok",
+    "street": "Olivér rakpart 253."
+  },
+  {
+    "zip": "1985",
+    "city": "Székesfehérvár",
+    "street": "Kozma kert 28."
+  },
+  {
+    "zip": "3584",
+    "city": "Budapest",
+    "street": "Rácz kert 47."
+  },
+  {
+    "zip": "0507",
+    "city": "Zalaegerszeg",
+    "street": "Farkas sétány 61."
+  },
+  {
+    "zip": "8819",
+    "city": "Devecser",
+    "street": "Szabina határsor 09."
+  },
+  {
+    "zip": "5911",
+    "city": "Miskolc",
+    "street": "Evelin országút 17."
+  },
+  {
+    "zip": "3883",
+    "city": "Budapest",
+    "street": "Bálint rakpart 47."
+  },
+  {
+    "zip": "4725",
+    "city": "Budapest",
+    "street": "Mihály park 625."
+  },
+  {
+    "zip": "0964",
+    "city": "Tapolca",
+    "street": "Gizella lejtő 3."
+  },
+  {
+    "zip": "4849",
+    "city": "Budapest",
+    "street": "Sándor pincesor 43."
+  },
+  {
+    "zip": "5901",
+    "city": "Budapest",
+    "street": "Papp út 9."
+  },
+  {
+    "zip": "9488",
+    "city": "Budapest",
+    "street": "Orbán turistaút 1."
+  },
+  {
+    "zip": "3811",
+    "city": "Kistelek",
+    "street": "Fülöp sugárút 7."
+  },
+  {
+    "zip": "1576",
+    "city": "Szeged",
+    "street": "Boglárka kert 03."
+  },
+  {
+    "zip": "0142",
+    "city": "Budapest",
+    "street": "Adél lejtő 38."
+  },
+  {
+    "zip": "2474",
+    "city": "Budapest",
+    "street": "Fehér sor 013."
+  },
+  {
+    "zip": "4147",
+    "city": "Csongrád",
+    "street": "Gréta tere 678."
+  },
+  {
+    "zip": "5488",
+    "city": "Nagykanizsa",
+    "street": "Antal erdősor 15."
+  },
+  {
+    "zip": "6354",
+    "city": "Budapest",
+    "street": "Tóth játszótér 215."
+  },
+  {
+    "zip": "5111",
+    "city": "Budapest",
+    "street": "Lívia mélyút 61."
+  },
+  {
+    "zip": "5481",
+    "city": "Mosonmagyaróvár",
+    "street": "Németh sétány 12."
+  },
+  {
+    "zip": "2971",
+    "city": "Miskolc",
+    "street": "Kornél körönd 83."
+  },
+  {
+    "zip": "4233",
+    "city": "Budapest",
+    "street": "Sipos gát 18."
+  },
+  {
+    "zip": "8510",
+    "city": "Budapest",
+    "street": "Olivér országút 16."
+  },
+  {
+    "zip": "9152",
+    "city": "Nagykanizsa",
+    "street": "Jázmin part 52."
+  },
+  {
+    "zip": "5037",
+    "city": "Cegléd",
+    "street": "Kíra átjáró 721."
+  },
+  {
+    "zip": "3360",
+    "city": "Budapest",
+    "street": "Váradi határút 52."
+  }
+]
