@@ -9,7 +9,7 @@ export interface INgxTableColumn {
   templateUrl: './ngx-data-table.component.html',
   styleUrls: ['./ngx-data-table.component.scss']
 })
-export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnInit {
+export class NgxDataTableComponent<T extends {[x: string]:  any}> implements OnInit {
 
   @Input() list: T[] = [];
 
@@ -17,6 +17,9 @@ export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnIn
 
   @Output() selectOne: EventEmitter<T> = new EventEmitter<T>();
   @Output() deleteOne: EventEmitter<T> = new EventEmitter<T>();
+
+  flattenedList: T[] = [];
+
 
   pageSize: number = 10;
 
@@ -34,6 +37,21 @@ export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnIn
   constructor( ) { }
 
   ngOnInit(): void {
+    // todo avoid mutating the original list
+    this.flattenedList = this.list.map( (item) => {
+      for( const key in item ) {
+        // if item.key is object, flatten it
+        if (item[key] && typeof item[key] === 'object' ) {
+          let merged: any = "";
+          for( const subKey in item[key] ) {
+            merged += `${item[key][subKey]} `;
+          }
+          merged.trimEnd();
+          item[key] = merged;
+        }
+      }
+      return item;
+    });
   }
 
   onSelect(entity: T): void {
