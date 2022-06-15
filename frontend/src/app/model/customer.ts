@@ -3,8 +3,24 @@ export class Customer {
   _id: string = 'new';
   firstName: string = '';
   lastName: string = '';
-  addressBill: string = '';
-  addressShip?: string = '';
+  addressBill: {
+    zip: string;
+    city: string;
+    street: string;
+  } = {
+    zip: '',
+    city: '',
+    street: '',
+  };
+  addressShip: {
+    zip: string;
+    city: string;
+    street: string;
+  } = {
+    zip: '',
+    city: '',
+    street: '',
+  };
   email: string = '';
   phone: string = '';
 }
