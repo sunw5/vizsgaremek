@@ -8,6 +8,9 @@ const seed = require('./seed/seeder');
 
 const app = express();
 
+// Authentication
+const authenticateJwt = require('./controllers/auth/authenticate');
+
 const { host, user, pass } = config.get('database');
 mongoose
   .connect(`mongodb+srv://${host}`, {
@@ -31,7 +34,7 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.use('/login', require('./controllers/login/router'));
-app.use('/product', require('./controllers/product/router'));
+app.use('/product', authenticateJwt, require('./controllers/product/router'));
 app.use('/customer', require('./controllers/customer/router'));
 
 app.use('/', (req, res) => {
