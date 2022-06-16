@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "deploy": "cd ../frontend && ng build && cd ../backend && docker-compose up"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "config": "^3.3.7",
     "cors": "^2.8.5",
