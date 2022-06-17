@@ -1,0 +1,129 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Vizsgaremek Szerver API Dokumentáció
+  description: A Vizsgaremek végpontjainek részeletes leírása és használata
+servers:
+  - url: http://localhost:3000
+paths:
+  /product:
+    get:
+      description: Returns a list of products
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+    post:
+      description: Creates a new product
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:                
+                $ref: '#/components/schemas/Product'
+                
+  /product/{product_id}:
+    get:
+      description: Returns a product by id
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:                
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:                
+                $ref: '#/components/schemas/Error'
+    
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Product:
+      type: object
+      required:
+        - Elérhető
+        - Ár        
+      properties:
+        _id:
+          type: string
+          description: A termék azonosítója
+        Magyar név:
+          type: string
+        Elérhető:
+          type: boolean
+        Ár:
+          type: number
+        Latin név:
+          type: string
+        Fényigény:
+          type: string
+        Tenyészidő:
+          type: string
+        Talajigény:
+          type: string
+        Habitus:
+          type: string        
+        Teljes magasság:
+          type: string        
+        Kiszerelés:
+          type: string        
+        Virágzás ideje:
+          type: string        
+        Virág színe:
+          type: string        
+        Egyéb:
+          type: string 
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        status:
+          type: number
+          description: A kód a hibához
+        message:
+          type: string
+          description: A hibaüzenet
+    Category:
+      type: object
+      required:
+        - name
+        - description
+      properties:
+        name:
+          type: string
+        description:
+          type: string
