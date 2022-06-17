@@ -54,11 +54,10 @@ module.exports = (model, populates = []) => {
     },
 
     findOne: (req, res, next) => {
-      return currentService.findOne(req.params.id).then((data) => {
-        if (!data) {
-          return next(new createError.NotFound('data is not found'));
-        }
-        return res.json(data);
+      return currentService.findOne(req.params.id)
+      .then(data =>  res.json(data))
+      .catch((err) => {
+        return err.name==='CastError' ? next(new createError.NotFound('data is not found')) : err;
       });
     },
 
