@@ -45,8 +45,8 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.use('/login', require('./controllers/login/router'));
-app.use('/product', authenticateJwt, roleGuard(3), require('./controllers/product/router'));
-app.use('/customer', require('./controllers/customer/router'));
+app.use('/product', authenticateJwt, require('./controllers/product/router'));
+app.use('/customer', authenticateJwt, require('./controllers/customer/router'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 
 app.use('/', (req, res) => {

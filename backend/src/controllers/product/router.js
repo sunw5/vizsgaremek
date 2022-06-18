@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
+const roleGuard = require('../auth/roleGuard');
 const productModel = require('../../models/product.model');
 const controller = require('../base/controller')(productModel, []);
 
 
 // create
-router.post('/', (req, res, next) => {
+router.post('/', roleGuard(2), (req, res, next) => {
   return controller.create(req, res, next);
 });
 
@@ -20,16 +21,16 @@ router.get('/:id', (req, res, next) => {
 });
 
 // update
-router.put('/:id', (req, res, next) => {
+router.put('/:id', roleGuard(2), (req, res, next) => {
   return controller.update(req, res, next);
 });
 
-router.patch('/:id', (req, res, next) => {
+router.patch('/:id', roleGuard(2), (req, res, next) => {
   return controller.update(req, res, next);
 });
 
 // delete
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id', roleGuard(3), (req, res, next) => {
   return controller.delete(req, res, next);
 });
 
