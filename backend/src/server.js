@@ -6,6 +6,10 @@ const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 
+// Authentication, authorization
+const authenticateJwt = require('./controllers/auth/authenticate');
+const roleGuard = require('./controllers/auth/roleGuard');
+
 const swaggerDocument = YAML.load('./docs/swagger.yaml');
 const options = {
   swaggerOptions: {
@@ -15,8 +19,7 @@ const options = {
 
 const app = express();
 
-// Authentication
-const authenticateJwt = require('./controllers/auth/authenticate');
+
 
 const { host, user, pass } = config.get('database');
 mongoose
@@ -42,7 +45,7 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.use('/login', require('./controllers/login/router'));
-app.use('/product', authenticateJwt, require('./controllers/product/router'));
+app.use('/product', authenticateJwt, roleGuard(3), require('./controllers/product/router'));
 app.use('/customer', require('./controllers/customer/router'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 

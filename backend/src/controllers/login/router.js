@@ -62,11 +62,11 @@ router.post('/', async (req, res, next) => {
       {
         _id: user._id,
         email: user.email,
-        role,
+        role: user.role,
       },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: '1h',
+        expiresIn: process.env.ACCESS_TOKEN_EXPIRATION_TIME,
       }
     );
 
