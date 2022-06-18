@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
-const seed = require('./seed/seeder');
 
 const swaggerDocument = YAML.load('./docs/swagger.yaml');
 const options = {
@@ -28,7 +27,9 @@ mongoose
   })
   .then((conn) => {
     console.log('Connection success!');
-    // seed(); // One time seed - uncomment to seed database
+    // One time seed - uncomment to seed database
+    /* const seed = require('./seed/seeder');
+    seed();  */
   })
   .catch((err) => {
     // throw new Error(err.message);
@@ -58,18 +59,13 @@ app.use((err, req, res, next) => {
     err.message = 'Server Error';    
   }
   
-  // render the error page
+  // send the error response
   res.json({
     hasError: true,
     status: err.status,
     message: err.message,    
-  });
+  }); 
   
-  // res.status = 500;
-  // res.json({
-  //   hasError: true,
-  //   message: 'Server Error',
-  // });
 });
 
 module.exports = app;
