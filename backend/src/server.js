@@ -1,6 +1,5 @@
 const express = require('express');
 const config = require('config');
-// const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -39,7 +38,6 @@ mongoose
 // Cross origin resource sharing: CORS
 app.use(cors());
 app.use(express.static('public'));
-// app.use(bodyParser.json());
 app.use(express.json());
 
 app.use('/login', require('./controllers/login/router'));
@@ -54,17 +52,17 @@ app.use('/', (req, res) => {
 
 app.use((err, req, res, next) => {
   // logger.error(err.message);
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
+    
   res.status(err.status || 500);
+  if (res.status === 500) {
+    err.message = 'Server Error';    
+  }
   
+  // render the error page
   res.json({
-    status: err.status || 500,
-    message: err.message,
-    error: err.error
+    hasError: true,
+    status: err.status,
+    message: err.message,    
   });
   
   // res.status = 500;
