@@ -25,8 +25,7 @@ const { host, user, pass } = config.get('database');
 mongoose
   .connect(`mongodb+srv://${host}`, {
     user,
-    pass,
-    dbName: 'VR',
+    pass,    
   })
   .then((conn) => {
     console.log('Connection success!');
