@@ -4,7 +4,7 @@ const product = require('../models/product.model');
 const customer = require('../models/customer.model');
 const user = require('../models/user.model');
 
-const modelsToSeed = [user];
+const modelsToSeed = [product];
 
 const seed = async () => {
   for (const model of modelsToSeed) {
