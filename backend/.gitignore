@@ -1,2 +1,4 @@
 node_modules
 config
+__mocks__
+controller.test.js
