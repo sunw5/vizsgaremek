@@ -3,8 +3,9 @@ const { join } = require('path');
 const product = require('../models/product.model');
 const customer = require('../models/customer.model');
 const user = require('../models/user.model');
+const order = require('../models/order.model');
 
-const modelsToSeed = [product];
+const modelsToSeed = [order];
 
 const seed = async () => {
   for (const model of modelsToSeed) {
@@ -17,13 +18,28 @@ const seed = async () => {
         'utf8'
       );
       const parsedData = JSON.parse(data);
-      
+
       if (model.modelName.toLowerCase() === 'user') {
         for (const userobj of parsedData) {
           const usermodel = new model(userobj);
           await usermodel.save();
         }
-      } else {
+      } else if (model.modelName.toLowerCase() === 'order') {
+        let customerIds = await customer.find({}).select({ _id: 1 });
+        customerIds = customerIds.map((customer) => customer._id.toString());
+        let productIds = await product.find({}).select({ _id: 1 });
+        productIds = productIds.map((product) => product._id.toString());
+
+        parsedData.forEach((order) => {
+          order.customerId =
+            customerIds[Math.floor(Math.random() * customerIds.length)];
+          order.productId =
+            productIds[Math.floor(Math.random() * productIds.length)];
+        });
+
+        await model.insertMany(parsedData);
+      }
+      else {
         await model.insertMany(parsedData);
       }
       console.log(
