@@ -3,14 +3,16 @@ const mongooose = require('mongoose');
 // customerId	productId	price	status: completed, inProgress, cancelled
 const orderSchema = mongooose.Schema({
   customerId: {
-    type: String,
+    type: mongooose.Schema.Types.ObjectId,
+    ref: 'Customer',
     required: true,
   },
   productId: {
-    type: String,
+    type: mongooose.Schema.Types.ObjectId,
+    ref: "Product",
     required: true,
   },
-  price: {
+  amount: {
     type: Number,
     required: true,
   },
