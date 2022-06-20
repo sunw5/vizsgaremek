@@ -45,5 +45,13 @@ export class ConfigService {
 
   ];
 
+  orderTableColumns: INgxTableColumn[] = [
+    {key: '_id', title: '#'},
+    {key: 'customerId', title: 'Vásárló'},
+    {key: 'productId', title: 'Termék'},
+    {key: 'amount', title: 'Mennyiség'},
+    {key: 'status', title: 'Státusz'},
+  ];
+
   constructor() { }
 }

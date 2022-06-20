@@ -7,6 +7,7 @@ import { OrderComponent } from './page/order/order.component';
 import { ProductEditComponent } from './page/product-edit/product-edit.component';
 import { ProductComponent } from './page/product/product.component';
 import { LoginComponent } from './page/login/login.component';
+import { OrderEditComponent } from './page/order-edit/order-edit.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,14 @@ const routes: Routes = [
   {
     path: 'vasarlo-szerkesztes/:id',
     component: CustomerEditComponent,
+  },
+  {
+    path: 'rendelesek',
+    component: OrderComponent,
+  },
+  {
+    path: 'rendeles-szerkesztes/:id',
+    component: OrderEditComponent,
   },
   {
     path: 'rendelesek',
