@@ -63,7 +63,7 @@ describe('REST API integration tests', () => {
       .send({
         email: 'johndoe@gmail.com',
         password:
-          '$2b$10$UYTZmcENQ1dM5zX3aurmOOIPDY.KW3K04sVVWR4qaBAoCahtCqlZO',
+          '$2a$10$5OldC9IMaHCU/xU54BBcZuoHty3yq9Z/u3DuoHX7AFqCCFvwYo6pW',
       })
       .set('Content-Type', `application/json`)
       .set('accept', 'json')
