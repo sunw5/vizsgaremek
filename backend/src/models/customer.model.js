@@ -1,41 +1,28 @@
 const mongoose = require('mongoose');
 
 const customerSchema = mongoose.Schema({
-  "lastName": {
+  lastName: {
     type: String,
     required: true,
   },
-  "firstName": {
+  firstName: {
     type: String,
     required: true,
   },
-  "addressBill": {
-    "zip": {
-      type: String,
-    },
-    "city": {
-      type: String,
-    },
-    "street": {
-      type: String,
-    },
+  addressBillId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Address',
+    required: true,
   },
-  "addressShip": {
-    "zip": {
-      type: String,
-    },
-    "city": {
-      type: String,
-    },
-    "street": {
-      type: String,
-    },
+  addressShipId: {  
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Address',
   },
-  "email": {
+  email: {
     type: String,
     required: true,
   },
-  "phone": {
+  phone: {
     type: String,
     required: true,
   },
