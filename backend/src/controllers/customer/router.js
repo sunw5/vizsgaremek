@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const roleGuard = require('../auth/roleGuard');
 
+const roleGuard = require('../auth/roleGuard');
 const customerModel = require('../../models/customer.model');
-const controller = require('../base/controller')(customerModel, []);
+const controller = require('../base/controller')(customerModel, [{path: 'addressBillId addressShipId'} ]);
 
 
 // create
