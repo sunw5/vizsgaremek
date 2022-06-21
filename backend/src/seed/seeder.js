@@ -4,8 +4,9 @@ const product = require('../models/product.model');
 const customer = require('../models/customer.model');
 const user = require('../models/user.model');
 const order = require('../models/order.model');
+const address = require('../models/address.model');
 
-const modelsToSeed = [order];
+const modelsToSeed = [address];
 
 const seed = async () => {
   for (const model of modelsToSeed) {
