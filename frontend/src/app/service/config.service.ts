@@ -38,8 +38,8 @@ export class ConfigService {
     {key: '_id', title: '#'},
     {key: 'firstName', title: 'Vezetéknév'},
     {key: 'lastName', title: 'Keresztnév'},
-    {key: 'addressBill', title: 'Számlázási cím'},
-    {key: 'addressShip', title: 'Szállítási cím'},
+    {key: 'addressBillId', title: 'Számlázási cím'},
+    {key: 'addressShipId', title: 'Szállítási cím'},
     {key: 'email', title: 'Email'},
     {key: 'phone', title: 'Telefon'},
 
