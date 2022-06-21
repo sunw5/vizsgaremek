@@ -6,7 +6,7 @@ const user = require('../models/user.model');
 const order = require('../models/order.model');
 const address = require('../models/address.model');
 
-const modelsToSeed = [address];
+const modelsToSeed = [customer];
 
 const seed = async () => {
   for (const model of modelsToSeed) {
@@ -25,7 +25,10 @@ const seed = async () => {
           const usermodel = new model(userobj);
           await usermodel.save();
         }
-      } else if (model.modelName.toLowerCase() === 'order') {
+        return console.log('User seeded');
+      }
+
+      if (model.modelName.toLowerCase() === 'order') {
         let customerIds = await customer.find({}).select({ _id: 1 });
         customerIds = customerIds.map((customer) => customer._id.toString());
         let productIds = await product.find({}).select({ _id: 1 });
@@ -37,12 +40,18 @@ const seed = async () => {
           order.productId =
             productIds[Math.floor(Math.random() * productIds.length)];
         });
+      } else if (model.modelName.toLowerCase() === 'customer') {
+        let addressIds = await address.find({}).select({ _id: 1 });
+        addressIds = addressIds.map((address) => address._id.toString());
+        
 
-        await model.insertMany(parsedData);
+        parsedData.forEach((customer, i) => {
+          customer.addressBillId = addressIds[i];          
+        });
       }
-      else {
-        await model.insertMany(parsedData);
-      }
+
+      await model.insertMany(parsedData);
+
       console.log(
         `Successfully seeded database with ${model.modelName.toLowerCase()}`
       );
