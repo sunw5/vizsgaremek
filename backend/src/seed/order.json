@@ -2,6 +2,12 @@
   {
     "customerId": null,
     "productId": null,
+    "amount": 3,
+    "status": "completed"
+  },
+  {
+    "customerId": null,
+    "productId": null,
     "amount": 1,
     "status": "completed"
   },
