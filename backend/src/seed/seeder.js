@@ -5,8 +5,9 @@ const customer = require('../models/customer.model');
 const user = require('../models/user.model');
 const order = require('../models/order.model');
 const address = require('../models/address.model');
+const bill = require('../models/bill.model');
 
-const modelsToSeed = [customer];
+const modelsToSeed = [bill];
 
 const seed = async () => {
   for (const model of modelsToSeed) {
@@ -40,15 +41,25 @@ const seed = async () => {
           order.productId =
             productIds[Math.floor(Math.random() * productIds.length)];
         });
-      } else if (model.modelName.toLowerCase() === 'customer') {
+      }
+      else if (model.modelName.toLowerCase() === 'customer') {
         let addressIds = await address.find({}).select({ _id: 1 });
-        addressIds = addressIds.map((address) => address._id.toString());
-        
+        addressIds = addressIds.map((address) => address._id.toString());        
 
         parsedData.forEach((customer, i) => {
           customer.addressBillId = addressIds[i];          
         });
       }
+      else if (model.modelName.toLowerCase() === 'bill') {
+        let orderData = await order.find({}).select({ _id: 1, amount: 1, productId: 1 }).populate([{ path: 'productId', select: ['Ár'] }]);
+        
+        parsedData.forEach((bill, i) => {
+          bill.orderId = orderData[i]._id.toString();
+          bill.price = orderData[i].amount * orderData[i].productId['Ár'];
+        });
+        // console.log(parsedData);
+      }
+
 
       await model.insertMany(parsedData);
 
