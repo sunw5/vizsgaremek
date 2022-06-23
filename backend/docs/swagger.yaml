@@ -919,33 +919,46 @@ components:
       properties:
         _id:
           type: string
-          description: A termék azonosítója
+          description: Product id
         Magyar név:
           type: string
+          description: Hungarian name
         Elérhető:
           type: boolean
+          description: Is available
         Ár:
           type: number
+          description: Price
         Latin név:
           type: string
+          description: Latin name
         Fényigény:
           type: string
+          description: Light
         Tenyészidő:
           type: string
+          description: Time
         Talajigény:
           type: string
+          description: Ground
         Habitus:
-          type: string        
+          type: string
+          description: Habitat 
         Teljes magasság:
-          type: string        
+          type: string
+          description: Full height
         Kiszerelés:
-          type: string        
+          type: string
+          description: Composition
         Virágzás ideje:
-          type: string        
+          type: string
+          description: Flowering time
         Virág színe:
-          type: string        
+          type: string
+          description: Flower color
         Egyéb:
           type: string
+          description: Other
     Customer:
       type: object
       required:
@@ -957,25 +970,25 @@ components:
       properties:
         _id:
           type: string
-          description: A vásárló azonosítója
+          description: Customer id
         lastName:
           type: string
-          description: A vásárló vezetékneve
+          description: Last name
         firstName:
           type: string
-          description: A vásárló keresztneve
+          description: First name
         addressBillId:
           type: string
-          description: A vásárló számlázási cím azonosítója
+          description: Billing address id
         addressShipId:
           type: string
-          description: A vásárló szállítási cím azonosítója
+          description: Shipping address id
         email:
           type: string
-          description: A vásárló email címe
+          description: Email
         phone:
           type: string
-          description: A vásárló telefonszáma
+          description: Phone
     Order:
       type: object
       required:
@@ -986,19 +999,19 @@ components:
       properties:
         _id:
           type: string
-          description: A rendelés azonosítója
+          description: Order id
         customerId:
           type: string
-          description: A rendelés vásárlója
+          description: Customer id
         productId:
           type: string
-          description: A rendelés termékeje
+          description: Product id
         amount:
           type: number
-          description: A rendelés mennyisége
+          description: Amount
         status:
           type: string
-          description: A rendelés állapota
+          description: Status (completed, in progress, withdrawn)
     Bill:
       type: object
       required:
@@ -1008,13 +1021,16 @@ components:
       properties:
         _id:
           type: string
-          description: A számla azonosítója
+          description: Bill id
         orderId:
           type: string
-          description: A számla rendelése
+          description: Order id
         price:
           type: number
-          description: A számla összege
+          description: Price
+        status:
+          type: string
+          description: Status (új, fizetve)
     Address:
       type: object
       required:
@@ -1024,16 +1040,16 @@ components:
       properties:
         _id:
           type: string
-          description: Az új cím azonosítója
+          description: Address id
         zip:
           type: string
-          description: Az új cím irányítószáma
+          description: Zip
         city:
           type: string
-          description: Az új cím városa
+          description: City
         street:
           type: string
-          description: Az új cím utca
+          description: Street
     Error:
       type: object
       required:
@@ -1043,8 +1059,8 @@ components:
           type: boolean
         status:
           type: number
-          description: A kód a hibához
+          description: Status code (e.g. 404, 500)
         message:
           type: string
-          description: A hibaüzenet
+          description: Error message
     
