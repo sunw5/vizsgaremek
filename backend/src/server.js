@@ -45,6 +45,7 @@ app.use('/login', require('./controllers/login/router'));
 app.use('/product', authenticateJwt, require('./controllers/product/router'));
 app.use('/customer', authenticateJwt, require('./controllers/customer/router'));
 app.use('/order', authenticateJwt, require('./controllers/order/router'));
+app.use('/bill', authenticateJwt, require('./controllers/bill/router'));
 app.use('/address', authenticateJwt, require('./controllers/address/router'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 
