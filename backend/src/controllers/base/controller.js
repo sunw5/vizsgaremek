@@ -50,15 +50,22 @@ module.exports = (model, populates = []) => {
     findAll: (req, res, next) => {
       return currentService.findAll().then((data) => {
         res.json(data);
+      })
+      .catch((err) => {
+        console.log(err);
+        next(new createError.InternalServerError(err.message));
       });
     },
 
     findOne: (req, res, next) => {
-      return currentService.findOne(req.params.id)
-      .then(data =>  res.json(data))
-      .catch((err) => {
-        return err.name==='CastError' ? next(new createError.NotFound('data is not found')) : err;
-      });
+      return currentService
+        .findOne(req.params.id)
+        .then((data) => res.json(data))
+        .catch((err) => {
+          return err.name === 'CastError'
+            ? next(new createError.NotFound('data is not found'))
+            : next(new createError.InternalServerError(err.message));
+        });
     },
 
     update: (req, res, next) => {
@@ -80,7 +87,7 @@ module.exports = (model, populates = []) => {
     delete: (req, res, next) => {
       return currentService
         .delete(req.params.id)
-        .then(() => res.json({}))
+        .then((response) => res.json(response))
         .catch((err) => {
           next(new createError.InternalServerError(err.message));
         });
