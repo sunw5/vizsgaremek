@@ -40,6 +40,10 @@ export class NgxDataTableComponent<T extends {[x: string]:  any}> implements OnI
     // todo avoid mutating the original list
     this.flattenedList = this.list.map( (item) => {
       for( const key in item ) {
+        // convert boolean to "igen" or "nem"
+        if( typeof item[key] === 'boolean' ) {
+          item[key] = item[key] ? 'igen' as any : 'nem';
+        }
         // if item.key is object, flatten it
         if (item[key] && typeof item[key] === 'object' ) {
           let merged: any = "";
