@@ -3,7 +3,8 @@ const router = express.Router();
 
 const roleGuard = require('../auth/roleGuard');
 const orderModel = require('../../models/order.model');
-const controller = require('../base/controller')(orderModel, [{path: 'customerId productId'} ]);
+// const controller = require('../base/controller')(orderModel, [{path: 'customerId productId'} ]);
+const controller = require('../base/controller')(orderModel, [{path: 'productId', select: ["Magyar név"]}, {path: 'customerId', select: ['lastName', 'firstName']} ]);
 
 // create
 router.post('/', roleGuard(2), (req, res, next) => {
