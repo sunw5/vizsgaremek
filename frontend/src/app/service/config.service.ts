@@ -16,7 +16,9 @@ export class ConfigService {
     {link: '/', title: 'Dashboard', icon: 'home'},
     {link: '/termekek', title: 'Termékek', icon: 'archive'},
     {link: '/vasarlok', title: 'Vásárlók', icon: 'user'},
+    {link: '/cimek', title: 'Címek', icon: 'paperclip'},
     {link: '/rendelesek', title: 'Rendelések', icon: 'shopping-cart'},
+    {link: '/szamlak', title: 'Számlák', icon: 'book-open'},
   ];
 
   productTableColumns: INgxTableColumn[] = [
@@ -42,7 +44,13 @@ export class ConfigService {
     {key: 'addressShipId', title: 'Szállítási cím'},
     {key: 'email', title: 'Email'},
     {key: 'phone', title: 'Telefon'},
+  ];
 
+  addressTableColumns: INgxTableColumn[] = [
+    {key: '_id', title: '#'},
+    {key: 'zip', title: 'Irányítószám'},
+    {key: 'city', title: 'Város'},
+    {key: 'street', title: 'Utca'}
   ];
 
   orderTableColumns: INgxTableColumn[] = [
@@ -50,6 +58,13 @@ export class ConfigService {
     {key: 'customerId', title: 'Vásárló'},
     {key: 'productId', title: 'Termék'},
     {key: 'amount', title: 'Mennyiség'},
+    {key: 'status', title: 'Státusz'},
+  ];
+
+  billTableColumns: INgxTableColumn[] = [
+    {key: '_id', title: '#'},
+    {key: 'orderId', title: 'Rendelés'},
+    {key: 'price', title: 'Ár'},
     {key: 'status', title: 'Státusz'},
   ];
 
