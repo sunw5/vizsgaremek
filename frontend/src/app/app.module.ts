@@ -22,6 +22,8 @@ import { ProductEditComponent } from './page/product-edit/product-edit.component
 import { LoginComponent } from './page/login/login.component';
 import { JwtInterceptor } from './service/jwt.interceptor';
 import { AuthService } from './service/auth.service';
+import { AddressComponent } from './page/address/address.component';
+import { AddressEditComponent } from './page/address-edit/address-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { AuthService } from './service/auth.service';
     CustomerEditComponent,
     OrderEditComponent,
     ProductEditComponent,
-    LoginComponent
+    LoginComponent,
+    AddressComponent,
+    AddressEditComponent
   ],
   imports: [
     BrowserModule,
