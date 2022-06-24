@@ -8,6 +8,10 @@ import { ProductEditComponent } from './page/product-edit/product-edit.component
 import { ProductComponent } from './page/product/product.component';
 import { LoginComponent } from './page/login/login.component';
 import { OrderEditComponent } from './page/order-edit/order-edit.component';
+import { BillComponent } from './page/bill/bill.component';
+import { BillEditComponent } from './page/bill-edit/bill-edit.component';
+import { AddressComponent } from './page/address/address.component';
+import { AddressEditComponent } from './page/address-edit/address-edit.component';
 
 const routes: Routes = [
   {
@@ -35,6 +39,14 @@ const routes: Routes = [
     component: CustomerEditComponent,
   },
   {
+    path: 'cimek',
+    component: AddressComponent,
+  },
+  {
+    path: 'cim-szerkesztes/:id',
+    component: AddressEditComponent,
+  },
+  {
     path: 'rendelesek',
     component: OrderComponent,
   },
@@ -43,9 +55,14 @@ const routes: Routes = [
     component: OrderEditComponent,
   },
   {
-    path: 'rendelesek',
-    component: OrderComponent,
+    path: 'szamlak',
+    component: BillComponent,
   },
+  {
+    path: 'szamla-szerkesztes/:id',
+    component: BillEditComponent,
+  },
+
 ];
 
 @NgModule({
