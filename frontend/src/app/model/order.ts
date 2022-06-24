@@ -1,8 +1,8 @@
 export class Order {
   [key: string]: any;
   _id: string = 'new';
-  customerId: number = 0;
-  productId: number = 0;
+  customerId: {_id: string} = {_id: ''};
+  productId: {_id: string} = {_id: ''};
   amount: number = 0;
-  status: string = 'completed' || 'inProgress' || 'cancelled';
+  status: string = 'completed' || 'in progress' || 'cancelled';
 }
