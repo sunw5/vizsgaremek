@@ -11,7 +11,7 @@ module.exports = (model, populateList = []) => {
       return model.find().sort({"_id":1}).populate([...populateList])
     }, 
 
-    findOne: (id) => model.findById(id).populate(...populateList),
+    findOne: (id) => model.findById(id).populate([...populateList]),
 
     update: (id, updateData) =>
       model.findByIdAndUpdate(id, updateData, { new: true }),
