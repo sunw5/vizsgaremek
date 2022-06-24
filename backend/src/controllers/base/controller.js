@@ -52,7 +52,6 @@ module.exports = (model, populates = []) => {
         res.json(data);
       })
       .catch((err) => {
-        console.log(err);
         next(new createError.InternalServerError(err.message));
       });
     },
