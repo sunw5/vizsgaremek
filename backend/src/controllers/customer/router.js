@@ -3,7 +3,7 @@ const router = express.Router();
 
 const roleGuard = require('../auth/roleGuard');
 const customerModel = require('../../models/customer.model');
-const controller = require('../base/controller')(customerModel, [{path: 'addressBillId addressShipId'} ]);
+const controller = require('../base/controller')(customerModel, [{path: 'addressBillId addressShipId', select: ["-__v"]} ]);
 
 
 // create

@@ -7,10 +7,10 @@ module.exports = (model, populateList = []) => {
     },
 
     findAll: () => {
-      return model.find().sort({"_id":1}).populate([...populateList])
+      return model.find().sort({"_id":1}).populate([...populateList]).select("-__v");
     }, 
 
-    findOne: (id) => model.findById(id).populate([...populateList]),
+    findOne: (id) => model.findById(id).populate([...populateList]).select("-__v"),
 
     update: (id, updateData) =>
       model.findByIdAndUpdate(id, updateData, { new: true }),
