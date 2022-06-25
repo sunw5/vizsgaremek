@@ -7,7 +7,6 @@ module.exports = (model, populateList = []) => {
     },
 
     findAll: () => {
-      console.log(populateList);
       return model.find().sort({"_id":1}).populate([...populateList])
     }, 
 
