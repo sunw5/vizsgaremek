@@ -1,6 +1,5 @@
 FROM node:latest
 WORKDIR /app
-COPY . .
-# COPY ../frontend/dist/vizsgaremek/ ./public
+COPY package.json .
 RUN npm i
 CMD [ "npm", "start" ]
