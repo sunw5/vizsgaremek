@@ -80,7 +80,7 @@ describe('REST API integration tests', () => {
 
   afterEach((done) => {
     mongoose.connection.close(() => done());
-  }); 
+  });
 
   test('GET /product', async () => {
     try {
@@ -97,10 +97,9 @@ describe('REST API integration tests', () => {
       });
       const deletedProducts = await Product.deleteMany({}).exec();
       console.log('deletedProducts', deletedProducts);
-      
     } catch (err) {
       throw new Error(err);
     }
-  });  
+  });
   
 });
