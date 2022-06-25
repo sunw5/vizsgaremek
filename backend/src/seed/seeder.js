@@ -7,7 +7,7 @@ const order = require('../models/order.model');
 const address = require('../models/address.model');
 const bill = require('../models/bill.model');
 
-const modelsToSeed = [bill];
+const modelsToSeed = [user];
 
 const seed = async () => {
   for (const model of modelsToSeed) {
