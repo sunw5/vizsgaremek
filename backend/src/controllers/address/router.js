@@ -12,11 +12,11 @@ router.post('/', roleGuard(2), (req, res, next) => {
 });
 
 // read
-router.get('/', roleGuard(2), (req, res, next) => {
+router.get('/', roleGuard(1), (req, res, next) => {
   return controller.findAll(req, res, next);
 });
 
-router.get('/:id', roleGuard(2), (req, res, next) => {
+router.get('/:id', roleGuard(1), (req, res, next) => {
   return controller.findOne(req, res, next);
 });
 
