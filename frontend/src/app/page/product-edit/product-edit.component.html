@@ -29,7 +29,7 @@
               [(ngModel)]="product['Magyar név']"
               #nameHun="ngModel"
               required
-              pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)*$"
+              pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}){0,5}$"
             />
             <div
               *ngIf="nameHun.invalid && (nameHun.dirty || nameHun.touched)"
@@ -54,8 +54,7 @@
               name="nameLat"
               [(ngModel)]="product['Latin név']"
               #nameLat="ngModel"
-              required
-              pattern="^[A-Za-z]+( [A-Za-z]+)*$"
+              pattern="^[A-Za-z]{1,20}( [A-Za-z]{1,20}){0,5}$"
             />
             <div
               *ngIf="nameLat.invalid && (nameLat.dirty || nameLat.touched)"
@@ -115,7 +114,7 @@
               [(ngModel)]="product['Ár']"
               #price="ngModel"
               required
-              pattern="^[1-9][0-9]*$"
+              pattern="^[1-9][0-9]{0,20}$"
               min="1"
             />
             <div
@@ -140,7 +139,7 @@
               name="light"
               [(ngModel)]="product['Fényigény']"
               #light="ngModel"
-              pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)*$"
+              pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}){0,50}$"
             />
             <div
               *ngIf="light.invalid && (light.dirty || light.touched)"
@@ -165,7 +164,7 @@
               name="lasting"
               [(ngModel)]="product['Tenyészidő']"
               #lasting="ngModel"
-              pattern="^[1-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)*$"
+              pattern="^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}){0,50}$"
             />
             <div
               *ngIf="lasting.invalid && (lasting.dirty || lasting.touched)"
@@ -190,7 +189,7 @@
               name="soil"
               [(ngModel)]="product['Talajigény']"
               #soil="ngModel"
-              pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű,\.]+( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű,\.]+)*$"
+              pattern="^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}){0,50}$"
             />
             <div
               *ngIf="soil.invalid && (soil.dirty || soil.touched)"
@@ -215,7 +214,7 @@
               name="habit"
               [(ngModel)]="product['Habitus']"
               #habit="ngModel"
-              pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)*$"
+              pattern="^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}){0,50}$"
             />
             <div
               *ngIf="habit.invalid && (habit.dirty || habit.touched)"
@@ -240,7 +239,7 @@
               name="fullheight"
               [(ngModel)]="product['Teljes magasság']"
               #fullheight="ngModel"
-              pattern="^[1-9][0-9 -]*( [A-Za-záéíóöőúüű]+)*$"
+              pattern="^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű\-]{1,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű\-,]{1,20}){0,50}$"
             />
             <div
               *ngIf="
@@ -268,7 +267,7 @@
               name="package"
               [(ngModel)]="product['Kiszerelés']"
               #package="ngModel"
-              pattern="^[1-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)*$"
+              pattern="^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}){0,50}$"
             />
             <div
               *ngIf="package.invalid && (package.dirty || package.touched)"
@@ -293,7 +292,7 @@
               name="flowering"
               [(ngModel)]="product['Virágzás ideje']"
               #flowering="ngModel"
-              pattern="^[A-Za-z]+( [A-Za-z-]+)*$"
+              pattern="^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű-]{1,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű-]{1,20}){0,50}$"
             />
             <div
               *ngIf="
@@ -320,7 +319,7 @@
               name="flowerColor"
               [(ngModel)]="product['Virág színe']"
               #flowerColor="ngModel"
-              pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)*$"
+              pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}){0,50}$"
             />
             <div
               *ngIf="
@@ -348,7 +347,7 @@
               name="other"
               [(ngModel)]="product['Egyéb']"
               #other="ngModel"
-              pattern="^[1-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű\-\.,]+( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű\-\.,]+)*$"
+              pattern="^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű,\.]{1,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű,\.]{1,20}){0,100}$"
             />
             <div
               *ngIf="other.invalid && (other.dirty || other.touched)"

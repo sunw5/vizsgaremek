@@ -1,25 +1,45 @@
-const mongooose = require('mongoose');
+const mongoose = require('mongoose');
 
 // customerId	productId	price	status: completed, inProgress, cancelled
-const orderSchema = mongooose.Schema({
+const orderSchema = mongoose.Schema({
   customerId: {
-    type: mongooose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Customer',
     required: true,
+    validate: {
+      validator: function (v) {
+        return mongoose.Types.ObjectId.isValid(v);
+      },
+    },
   },
   productId: {
-    type: mongooose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Product",
     required: true,
+    validate: {
+      validator: function (v) {
+        return mongoose.Types.ObjectId.isValid(v);
+      },
+    },
   },
   amount: {
     type: Number,
     required: true,
+    validate: {
+      validator: function (v) {
+        return /^[0-9a-z]{1,20}$/.test(v);
+      },
+    },
   },
   status: {
     type: String,
     required: true,
+    validate: {
+      validator: function (v) {
+        return /^completed|in progress|cancelled$/.test(v);
+      },
+    },
   }
 });
 
-module.exports = mongooose.model('Order', orderSchema);
+module.exports = mongoose.model('Order', orderSchema);

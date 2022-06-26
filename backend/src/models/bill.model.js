@@ -1,18 +1,33 @@
 const mongoose = require('mongoose');
-// id, orderId, price, status
+
 const billSchema = mongoose.Schema({
   orderId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Order',
     required: true,
+    validate: {
+      validator: function (v) {
+        return mongoose.Types.ObjectId.isValid(v);
+      },
+    },
   },
   price: {
     type: Number,
     required: true,
+    validate: {
+      validator: function (v) {
+        return /^[1-9][0-9]{1,20}$/.test(v);
+      },
+    },
   },
   status: {
     type: String,
     required: true,
+    validate: {
+      validator: function (v) {
+        return /^új|teljesítve|stornózott$/.test(v);
+      },
+    },
   },
 });
 
