@@ -41,7 +41,7 @@ import { AddressEditComponent } from './page/address-edit/address-edit.component
     ProductEditComponent,
     LoginComponent,
     AddressComponent,
-    AddressEditComponent
+    AddressEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,18 +50,16 @@ import { AddressEditComponent } from './page/address-edit/address-edit.component
     IconModule,
     DataTableModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
-      deps: [
-        AuthService,
-      ],
+      deps: [AuthService],
       multi: true,
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
