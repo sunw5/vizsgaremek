@@ -28,10 +28,13 @@ export class ConfigService {
     {key: 'Ár', title: 'Ár'},
     {key: 'Magyar név', title: 'Magyar név'},
     {key: 'Latin név', title: 'Latin név'},
-    {key: 'Fényigény', title: 'Fényigény'},
+    {key: 'Teljes magasság', title: 'Teljes magasság'},
     {key: 'Talajigény', title: 'Talajigény'},
+    {key: 'Fényigény', title: 'Fényigény'},
+    {key: 'Tenyészidő', title: 'Tenyészidő'},
     {key: 'Habitus', title: 'Habitus'},
     {key: 'Virág színe', title: 'Virág színe'},
+    {key: 'Virágzás ideje', title: 'Virágzás ideje'},
     {key: 'Egyéb', title: 'Egyéb'},
 
   ];
