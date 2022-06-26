@@ -34,4 +34,8 @@ export class ProductComponent implements OnInit {
       });
     }
   }
+
+  onCreateOne(): void {
+    this.router.navigate(['/', 'termek-szerkesztes', 'new']);
+  }
 }

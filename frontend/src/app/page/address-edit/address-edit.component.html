@@ -1,19 +1,21 @@
-{{ address$ | async | json }}
-
-<div class="row">
+<div class="row mt-3">
   <div class="col-md-6 col-sm-8">
     <div *ngIf="address$ | async as address" class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title" *ngIf="address$ | async">Edit address</h4>
-        <h4 class="card-title" *ngIf="!(address$ | async)">Add New address</h4>
+        <h4 class="card-title" *ngIf="address._id !== 'new'">
+          Cím szerkesztése
+        </h4>
+        <h4 class="card-title" *ngIf="address._id === 'new'">
+          Új cím felvétele
+        </h4>
       </div>
 
       <div class="card-body">
         <form #addressForm="ngForm">
           <h3 class="h4 text-primary font-weight-bold">
             ID:
-            <span *ngIf="address._id">{{ address._id }}</span>
-            <span *ngIf="!address._id">auto-generated</span>
+            <span *ngIf="address._id !== 'new'">{{ address._id }}</span>
+            <span *ngIf="address._id === 'new'">generált</span>
           </h3>
           <input type="hidden" name="id" [(ngModel)]="address._id" required />
 
@@ -34,7 +36,8 @@
               class="alert"
             >
               <div *ngIf="zip.errors?.['pattern']">
-                Kérjük, csak számokat írjon be! Szóköz nem lehet, maximum 4karakter!
+                Kérjük, csak számokat írjon be! Szóköz nem lehet, maximum
+                4karakter!
               </div>
               <div *ngIf="zip.errors?.['required']">
                 Kérjük, töltse ki a mezőt!

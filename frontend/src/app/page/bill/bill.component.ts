@@ -36,4 +36,8 @@ export class BillComponent implements OnInit {
       });
     }
   }
+
+  onCreateOne(): void {
+    this.router.navigate(['/', 'szamla-szerkesztes', 'new']);
+  }
 }

@@ -1,11 +1,12 @@
-{{ customer$ | async | json }}
-<div class="row">
+<div class="row mt-3">
   <div class="col-md-6 col-sm-8">
     <div *ngIf="customer$ | async as customer" class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title" *ngIf="customer$ | async">Edit customer</h4>
-        <h4 class="card-title" *ngIf="!(customer$ | async)">
-          Add New customer
+        <h4 class="card-title" *ngIf="customer._id !== 'new'">
+          Vásárló szerkesztése
+        </h4>
+        <h4 class="card-title" *ngIf="customer._id === 'new'">
+          Új vásárló létrehozása
         </h4>
       </div>
 
@@ -13,8 +14,8 @@
         <form #customerForm="ngForm">
           <h3 class="h4 text-primary font-weight-bold">
             ID:
-            <span *ngIf="customer._id">{{ customer._id }}</span>
-            <span *ngIf="!customer._id">auto-generated</span>
+            <span *ngIf="customer._id !== 'new'">{{ customer._id }}</span>
+            <span *ngIf="customer._id === 'new'">generált</span>
           </h3>
           <input type="hidden" name="id" [(ngModel)]="customer._id" required />
 
@@ -143,8 +144,8 @@
                 class="alert"
               >
                 <div *ngIf="zipBill.errors?.['pattern']">
-                  Kérjük, csak számokat írjon be, maximum hossz 4 digit!
-                  Szóköz nem lehet!
+                  Kérjük, csak számokat írjon be, maximum hossz 4 digit! Szóköz
+                  nem lehet!
                 </div>
                 <div *ngIf="zipBill.errors?.['required']">
                   Kérjük, töltse ki a mezőt!
@@ -224,8 +225,8 @@
                 class="alert"
               >
                 <div *ngIf="zipShip.errors?.['pattern']">
-                  Kérjük, csak számokat írjon be, maximum hossz 4 digit!
-                  Szóköz nem lehet!
+                  Kérjük, csak számokat írjon be, maximum hossz 4 digit! Szóköz
+                  nem lehet!
                 </div>
                 <div *ngIf="zipShip.errors?.['required']">
                   Kérjük, töltse ki a mezőt!

@@ -13,12 +13,12 @@ export interface INgxTableColumn {
 export class NgxDataTableComponent<T extends { [x: string]: any }>
   implements OnInit
 {
+  @Input() name: string = '';
   @Input() list: T[] = [];
-
   @Input() columns: INgxTableColumn[] = [];
-
   @Output() selectOne: EventEmitter<T> = new EventEmitter<T>();
   @Output() deleteOne: EventEmitter<T> = new EventEmitter<T>();
+  @Output() createOne = new EventEmitter();
 
   // filter pipe params
   keys: string[] = [];
@@ -68,6 +68,10 @@ export class NgxDataTableComponent<T extends { [x: string]: any }>
 
   onDelete(entity: T): void {
     this.deleteOne.emit(entity);
+  }
+
+  onCreate(): void {
+    this.createOne.emit();
   }
 
   jumpToPage(pageNum: number): void {

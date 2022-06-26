@@ -38,4 +38,8 @@ export class AddressComponent implements OnInit {
     }
   }
 
+  onCreateOne(): void {
+    this.router.navigate(['/', 'cim-szerkesztes', 'new']);
+  }
+
 }

@@ -34,4 +34,8 @@ export class CustomerComponent implements OnInit {
       });
     }
   }
+
+  onCreateOne(): void {
+    this.router.navigate(['/', 'vasarlo-szerkesztes', 'new']);
+  }
 }

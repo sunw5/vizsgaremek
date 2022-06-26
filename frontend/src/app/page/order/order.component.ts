@@ -34,4 +34,9 @@ export class OrderComponent implements OnInit {
       });
     }
   }
+
+  onCreateOne(): void {
+    console.log('onCreateOne');
+    this.router.navigate(['/', 'rendeles-szerkesztes', 'new']);
+  }
 }

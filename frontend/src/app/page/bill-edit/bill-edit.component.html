@@ -1,11 +1,13 @@
-{{ bill$ | async | json }}
-
-<div class="row">
+<div class="row mt-3">
   <div class="col-md-6 col-sm-8">
     <div *ngIf="bill$ | async as bill" class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title" *ngIf="bill$ | async">Edit bill</h4>
-        <h4 class="card-title" *ngIf="!(bill$ | async)">Add New bill</h4>
+        <h4 class="card-title" *ngIf="bill._id !== 'new'">
+          Számla szerkesztése
+        </h4>
+        <h4 class="card-title" *ngIf="bill._id === 'new'">
+          Új számla felvétele
+        </h4>
       </div>
 
       <div class="card-body">
@@ -13,11 +15,9 @@
           <h3 class="h4 text-primary font-weight-bold">
             ID:
             <span *ngIf="bill._id">{{ bill._id }}</span>
-            <span *ngIf="!bill._id">auto-generated</span>
+            <span *ngIf="!bill._id">generált</span>
           </h3>
           <input type="hidden" name="id" [(ngModel)]="bill._id" required />
-
-
 
           <h3 class="h5 text-secondary">Rendelés *</h3>
           <div class="ms-3">
@@ -34,9 +34,7 @@
                 required
               />
               <div
-                *ngIf="
-                  orderId.invalid && (orderId.dirty || orderId.touched)
-                "
+                *ngIf="orderId.invalid && (orderId.dirty || orderId.touched)"
                 class="alert"
               >
                 <div *ngIf="orderId.errors?.['pattern']">
@@ -79,7 +77,6 @@
           <h3 class="h5 text-secondary">Státusz *</h3>
           <div>
             <div class="form-group">
-
               <select
                 [(ngModel)]="bill['status']"
                 name="category"
@@ -91,7 +88,6 @@
                 <option>új</option>
                 <option>teljesítve</option>
                 <option>stornózott</option>
-
               </select>
               <div
                 *ngIf="status.invalid && (status.dirty || status.touched)"
@@ -133,4 +129,3 @@
   </div>
   <div class="col-md-4"></div>
 </div>
-

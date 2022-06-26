@@ -1,18 +1,21 @@
-{{ product$ | async | json }}
-<div class="row">
+<div class="row mt-3">
   <div class="col-md-6 col-sm-8">
-    <div *ngIf=" product$ | async as product" class="card">
+    <div *ngIf="product$ | async as product" class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title" *ngIf="product$ | async">Edit product</h4>
-        <h4 class="card-title" *ngIf="!(product$ | async)">Add New product</h4>
+        <h4 class="card-title" *ngIf="product._id !== 'new'">
+          Termék szerkesztése
+        </h4>
+        <h4 class="card-title" *ngIf="product._id === 'new'">
+          Új termék felvétele
+        </h4>
       </div>
 
       <div class="card-body">
         <form #productForm="ngForm">
           <h3 class="h4 text-primary font-weight-bold">
             ID:
-            <span *ngIf="product._id">{{ product._id }}</span>
-            <span *ngIf="!product._id">auto-generated</span>
+            <span *ngIf="product._id !== 'new'">{{ product._id }}</span>
+            <span *ngIf="product._id === 'new'">generált</span>
           </h3>
           <input type="hidden" name="id" [(ngModel)]="product._id" required />
 
@@ -33,8 +36,8 @@
               class="alert"
             >
               <div *ngIf="nameHun.errors?.['pattern']">
-                Kérjük, csak magyar betüket tartalmazó szavakat írjon be!
-                Szóköz csak a szavak között lehet!
+                Kérjük, csak magyar betüket tartalmazó szavakat írjon be! Szóköz
+                csak a szavak között lehet!
               </div>
               <div *ngIf="nameHun.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -59,8 +62,8 @@
               class="alert"
             >
               <div *ngIf="nameLat.errors?.['pattern']">
-                Kérjük, csak ékezet nélküli betűket írjon be!
-                Szóköz csak a szavak között lehet!
+                Kérjük, csak ékezet nélküli betűket írjon be! Szóköz csak a
+                szavak között lehet!
               </div>
               <div *ngIf="nameLat.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -75,9 +78,9 @@
                 type="radio"
                 class="form-check-input"
                 id="activeTrue"
-                name='activeTrue'
+                name="activeTrue"
                 [(ngModel)]="product['Elérhető']"
-                [value]=true
+                [value]="true"
               />
               Igen
               <span class="circle">
@@ -91,9 +94,9 @@
                 type="radio"
                 class="form-check-input"
                 id="activeFalse"
-                name='activeFalse'
+                name="activeFalse"
                 [(ngModel)]="product['Elérhető']"
-                [value]=false
+                [value]="false"
               />
               Nem
               <span class="circle">
@@ -144,8 +147,8 @@
               class="alert"
             >
               <div *ngIf="light.errors?.['pattern']">
-                Kérjük, csak magyar betüket tartalmazó szavakat írjon be!
-                Szóköz csak a szavak között lehet!
+                Kérjük, csak magyar betüket tartalmazó szavakat írjon be! Szóköz
+                csak a szavak között lehet!
               </div>
               <div *ngIf="light.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -169,8 +172,8 @@
               class="alert"
             >
               <div *ngIf="lasting.errors?.['pattern']">
-                Kérjük, csak magyar betüket tartalmazó szavakat írjon be!
-                Szóköz csak a szavak között lehet!
+                Kérjük, csak magyar betüket tartalmazó szavakat írjon be! Szóköz
+                csak a szavak között lehet!
               </div>
               <div *ngIf="lasting.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -194,8 +197,8 @@
               class="alert"
             >
               <div *ngIf="soil.errors?.['pattern']">
-                Kérjük, csak magyar betüket tartalmazó szavakat írjon be!
-                Szóköz csak a szavak között lehet!
+                Kérjük, csak magyar betüket tartalmazó szavakat írjon be! Szóköz
+                csak a szavak között lehet!
               </div>
               <div *ngIf="soil.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -219,8 +222,8 @@
               class="alert"
             >
               <div *ngIf="habit.errors?.['pattern']">
-                Kérjük, csak magyar betüket tartalmazó szavakat írjon be!
-                Szóköz csak a szavak között lehet!
+                Kérjük, csak magyar betüket tartalmazó szavakat írjon be! Szóköz
+                csak a szavak között lehet!
               </div>
               <div *ngIf="habit.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -240,12 +243,15 @@
               pattern="^[1-9][0-9 -]*( [A-Za-záéíóöőúüű]+)*$"
             />
             <div
-              *ngIf="fullheight.invalid && (fullheight.dirty || fullheight.touched)"
+              *ngIf="
+                fullheight.invalid && (fullheight.dirty || fullheight.touched)
+              "
               class="alert"
             >
               <div *ngIf="fullheight.errors?.['pattern']">
-                Kérjük, adjon meg magasságot számmal majd adja meg a mértékegységet magyar betükkel!
-                Szóköz csak a szavak, számok között lehet! Pl.: 1 - 5 méter
+                Kérjük, adjon meg magasságot számmal majd adja meg a
+                mértékegységet magyar betükkel! Szóköz csak a szavak, számok
+                között lehet! Pl.: 1 - 5 méter
               </div>
               <div *ngIf="fullheight.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -269,8 +275,8 @@
               class="alert"
             >
               <div *ngIf="package.errors?.['pattern']">
-                Kérjük, csak magyar betüket tartalmazó szavakat írjon be!
-                Szóköz csak a szavak között lehet!
+                Kérjük, csak magyar betüket tartalmazó szavakat írjon be! Szóköz
+                csak a szavak között lehet!
               </div>
               <div *ngIf="package.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -290,12 +296,14 @@
               pattern="^[A-Za-z]+( [A-Za-z-]+)*$"
             />
             <div
-              *ngIf="flowering.invalid && (flowering.dirty || flowering.touched)"
+              *ngIf="
+                flowering.invalid && (flowering.dirty || flowering.touched)
+              "
               class="alert"
             >
               <div *ngIf="flowering.errors?.['pattern']">
-                Kérjük, adja meg a virágzás hónapjait római számokkal!
-                Szóköz csak a szavak között lehet!
+                Kérjük, adja meg a virágzás hónapjait római számokkal! Szóköz
+                csak a szavak között lehet!
               </div>
               <div *ngIf="flowering.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -315,12 +323,15 @@
               pattern="^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+( [A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)*$"
             />
             <div
-              *ngIf="flowerColor.invalid && (flowerColor.dirty || flowerColor.touched)"
+              *ngIf="
+                flowerColor.invalid &&
+                (flowerColor.dirty || flowerColor.touched)
+              "
               class="alert"
             >
               <div *ngIf="flowerColor.errors?.['pattern']">
-                Kérjük, csak magyar betüket tartalmazó szavakat írjon be!
-                Szóköz csak a szavak között lehet!
+                Kérjük, csak magyar betüket tartalmazó szavakat írjon be! Szóköz
+                csak a szavak között lehet!
               </div>
               <div *ngIf="flowerColor.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -344,8 +355,8 @@
               class="alert"
             >
               <div *ngIf="other.errors?.['pattern']">
-                Kérjük, csak magyar betüket tartalmazó szavakat írjon be!
-                Szóköz csak a szavak között lehet!
+                Kérjük, csak magyar betüket tartalmazó szavakat írjon be! Szóköz
+                csak a szavak között lehet!
               </div>
               <div *ngIf="other.errors?.['required']">
                 Kérjük, töltse ki a mezőt!
@@ -374,10 +385,8 @@
             </button>
           </div>
         </form>
-
       </div>
     </div>
   </div>
   <div class="col-md-4"></div>
 </div>
-

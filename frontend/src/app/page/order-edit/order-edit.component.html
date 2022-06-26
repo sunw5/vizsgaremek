@@ -1,19 +1,17 @@
-{{ order$ | async | json }}
-
-<div class="row">
+<div class="row mt-3">
   <div class="col-md-6 col-sm-8">
     <div *ngIf="order$ | async as order" class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title" *ngIf="order$ | async">Edit order</h4>
-        <h4 class="card-title" *ngIf="!(order$ | async)">Add New order</h4>
+        <h4 class="card-title" *ngIf="(order._id !== 'new')">Rendelés szerkesztése</h4>
+        <h4 class="card-title" *ngIf="(order._id === 'new')">Új rendelés felvétele</h4>
       </div>
 
       <div class="card-body">
         <form #orderForm="ngForm">
           <h3 class="h4 text-primary font-weight-bold">
             ID:
-            <span *ngIf="order._id">{{ order._id }}</span>
-            <span *ngIf="!order._id">auto-generated</span>
+            <span *ngIf="(order._id !== 'new')">{{ order._id }}</span>
+            <span *ngIf="(order._id === 'new')">generált</span>
           </h3>
           <input type="hidden" name="id" [(ngModel)]="order._id" required />
 
@@ -107,16 +105,6 @@
           <h3 class="h5 text-secondary">Státusz *</h3>
           <div>
             <div class="form-group">
-              <!-- <input
-                type="text"
-                class="form-control"
-                id="status"
-                name="status"
-                [(ngModel)]="order['status']"
-                #status="ngModel"
-                pattern="^[0-9a-z]{1,20}$"
-                required
-              /> -->
               <select
                 [(ngModel)]="order['status']"
                 name="category"
