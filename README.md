@@ -16,7 +16,7 @@
 **Elfogadási kritérium:**  
 
 Egy mobiloptimalizált oldal menüsávval melyen keresztül az összes adminisztrátori felület elérhető.
-Bejelentkezést biztosít.
+Bejelentkezést biztosít. Alapvető adatok áttekintése.
 
 <br>
 
@@ -30,10 +30,19 @@ Bejelentkezést biztosít.
 _Az oldalra navigálva egy helyen listázva látható az összes termék a következő adatokkal:_
 
 >- id
->- megnevezés
->- kategória
->- ár
->- aktuális-e
+>- Ár
+>- Elérhető
+>- Magyar név
+>- Latin név
+>- Fényigény
+>- Tenyészidő
+>- Talajigény
+>- Habitus
+>- Teljes magasság
+>- Kiszerelés
+>- Virágzás ideje
+>- Virág színe
+>- Egyéb
 
 <br>
 
@@ -79,7 +88,8 @@ az adoott termék megerősítés után törlésre kerül.
 Az oldalra navigálva egy helyen listázva látható az összes vásárló a következő adatokkal:_
 
 >- id
->- név
+>- Vezetéknév
+>- Keresztnév
 >- számlázási cím
 >- szállítási cím
 >- e-mail cím
@@ -131,7 +141,7 @@ Az oldalra navigálva Egy helyen listázva látható az összes megrendelés a k
 >- id
 >- vevő azonosítója
 >- termék azonosítója
->- ár
+>- mennyiség
 >- státusz (teljesített, folyamatban, visszavont)
 
 <br>
@@ -180,7 +190,7 @@ Az oldalra navigálva Egy helyen listázva látható az összes számla a követ
 >- id
 >- megrendelés azonosítója
 >- ár
->- státusz (új, fizetett)
+>- státusz (új, teljesítve, stornózott)
 
 <br>
 
@@ -204,7 +214,7 @@ egy a számla szerkesztésére szolgáló felület jelenik meg.
 Ezen a felületen a számla összes adata szerkeszthető, menthető.
 Visszanavigálás lehetősége a számlák oldalra.
 
-br>
+<br>
 
 **4. agilis felhasználói történet:**
 > _Számla törölhető a számla listában._
@@ -214,3 +224,10 @@ A számlák lista minden eleme tartalmaz törlés gombot melynek használatával
 az adott megrendelés megerősítés után törlésre kerül.
 
 <br>
+
+## _A projekt egyéb adatai_
+### Prioritás: 
+> **magas**
+
+### Megvalósítási idő: 
+> **négy hét** 
