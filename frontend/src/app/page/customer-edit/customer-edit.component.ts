@@ -63,14 +63,13 @@ export class CustomerEditComponent implements OnInit {
         console.error(err);
       }
     });
-    
+
   }
 
   onUpdate(customer: Customer, form: NgForm) {
     const addressBill = customer['addressBillId'];
     this.addressService.update(addressBill).subscribe({
       next: (address) => {
-        // console.log(address);
       },
       error: (err) => {
         console.log(err);
@@ -92,7 +91,6 @@ export class CustomerEditComponent implements OnInit {
     } else {
       this.addressService.update(addressShip).subscribe({
         next: (address) => {
-          // console.log(address);
           customerUpdate();
         },
         error: (err) => {
@@ -101,8 +99,6 @@ export class CustomerEditComponent implements OnInit {
       });
     }
 
-    // delete customer['addressBillId'];
-    // delete customer['addressShipId'];
     const customerUpdate = () => {
       const customerToUpdate = {
         ...customer,
@@ -114,7 +110,5 @@ export class CustomerEditComponent implements OnInit {
         error: (err) => console.error(err),
       });
     };
-
-    // console.log(customerToUpdate);
   }
 }

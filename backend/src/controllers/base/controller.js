@@ -2,16 +2,6 @@ const express = require('express');
 const createError = require('http-errors');
 const baseService = require('./service');
 
-// module.exports = (model) => {
-//     const service = baseService(model);
-//     return {
-//         findAll(req, res, next) {
-//             return service.findAll()
-//                 .then(list => res.json(list));
-//         }
-//     };
-// };
-
 const checkModel = (model, body, next) => {
   const validationErrors = new model(body).validateSync();
   if (validationErrors) {
@@ -31,11 +21,7 @@ const checkModel = (model, body, next) => {
 module.exports = (model, populates = []) => {
   const currentService = baseService(model, populates);
   return {
-    create: (req, res, next) => {
-      // if (!checkModel(model, req.body, next)) {
-      //     return;
-      // }
-
+    create: (req, res, next) => {      
       return currentService
         .create(req.body)
         .then((cp) => {
@@ -67,12 +53,7 @@ module.exports = (model, populates = []) => {
         });
     },
 
-    update: (req, res, next) => {
-      // if (!checkModel(model, req.body, next)) {
-      //     console.log('!checkModel');
-      //     return;
-      // }
-
+    update: (req, res, next) => {      
       return currentService
         .update(req.params.id, req.body)
         .then((data) => {

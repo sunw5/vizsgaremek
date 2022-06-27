@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// customerId	productId	price	status: completed, inProgress, cancelled
 const orderSchema = mongoose.Schema({
   customerId: {
     type: mongoose.Schema.Types.ObjectId,

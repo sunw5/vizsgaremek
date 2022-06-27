@@ -2776,8 +2776,4 @@ export class ProductService extends BaseService<Product> {
     super(http);
     this.entityName = 'product';
   }
-
-  // override getAll(): Observable<Product[]> {
-  //   return of(this.listPlant);
-  // }
 }

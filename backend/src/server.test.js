@@ -69,7 +69,6 @@ describe('REST API integration tests', () => {
       .set('accept', 'json')
       .end((err, res) => {
         if (err) {
-          //   logger.error(err);
           console.log(err);
           return done();
         }

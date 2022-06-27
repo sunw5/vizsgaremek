@@ -32,8 +32,7 @@ mongoose
     seed(); */
   })
   .catch((err) => {
-    // throw new Error(err.message);
-    console.log(err);
+    throw new Error(err.message);    
   });
 
 // Cross origin resource sharing: CORS
@@ -55,14 +54,12 @@ app.use('/', (req, res) => {
 });
 
 app.use((err, req, res, next) => {
-  // logger.error(err.message);
     
   res.status(err.status || 500);
   if (res.status === 500) {
     err.message = 'Server Error';    
   }
   
-  // send the error response
   res.json({
     hasError: true,
     status: err.status,

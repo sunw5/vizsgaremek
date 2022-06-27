@@ -12,7 +12,6 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductEditComponent implements OnInit {
   product$!: Observable<Product>;
-  // product: Product = new Product();
 
   constructor(
     private productService: ProductService,
@@ -27,9 +26,7 @@ export class ProductEditComponent implements OnInit {
         return this.productService.get(params['id'])
       })
     );
-    // this.product$.subscribe((data) => {
-    //   if (data) this.product = data;
-    // });
+    
   }
 
   onCreate(product: Product) {

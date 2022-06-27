@@ -12,7 +12,6 @@ const modelsToSeed = [user];
 const seed = async () => {
   for (const model of modelsToSeed) {
     try {
-      // const dropResult = await conn.connection.db.dropCollection('products');
       const dropResult = await model.collection.drop();
 
       const data = await fsp.readFile(
@@ -57,7 +56,6 @@ const seed = async () => {
           bill.orderId = orderData[i]._id.toString();
           bill.price = orderData[i].amount * orderData[i].productId['Ár'];
         });
-        // console.log(parsedData);
       }
 
 
