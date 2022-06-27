@@ -12,6 +12,7 @@ import { BillComponent } from './page/bill/bill.component';
 import { BillEditComponent } from './page/bill-edit/bill-edit.component';
 import { AddressComponent } from './page/address/address.component';
 import { AddressEditComponent } from './page/address-edit/address-edit.component';
+import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -33,34 +34,42 @@ const routes: Routes = [
   {
     path: 'vasarlok',
     component: CustomerComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'vasarlo-szerkesztes/:id',
     component: CustomerEditComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'cimek',
     component: AddressComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'cim-szerkesztes/:id',
     component: AddressEditComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'rendelesek',
     component: OrderComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'rendeles-szerkesztes/:id',
     component: OrderEditComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'szamlak',
     component: BillComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'szamla-szerkesztes/:id',
     component: BillEditComponent,
+    canActivate: [AuthGuardService]
   },
 
 ];
