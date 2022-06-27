@@ -1,6 +1,7 @@
 const express = require('express');
 const config = require('config');
 const morgan = require('morgan');
+const logger = require('./utils/logger');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
@@ -38,6 +39,7 @@ mongoose
 // Cross origin resource sharing: CORS
 app.use(cors());
 app.use(express.static('public'));
+app.use(morgan('tiny', { stream: logger.stream }));
 app.use(express.json());
 
 app.use('/login', require('./controllers/login/router'));
@@ -54,6 +56,7 @@ app.use('/', (req, res) => {
 });
 
 app.use((err, req, res, next) => {
+  logger.error(err.message);
     
   res.status(err.status || 500);
   if (res.status === 500) {

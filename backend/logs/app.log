@@ -1,0 +1,20 @@
+info: GET /customer 200 27827 - 182.584 ms
+
+info: GET /customer/62b24ce1d49e0dad0e0df6ea 200 347 - 67.804 ms
+
+info: PATCH /address/62b2369a6421a9d9139097e5 200 97 - 57.248 ms
+
+info: PATCH /address/62b8dcc2542a6ecc541e5749 200 97 - 38.649 ms
+
+info: PATCH /customer/62b24ce1d49e0dad0e0df6ea 200 229 - 46.226 ms
+
+info: GET /customer 200 27827 - 161.210 ms
+
+info: GET /product 200 45289 - 129.997 ms
+
+info: GET /product/62af69709f6517dc083a2232 200 403 - 31.610 ms
+
+info: PATCH /product/62af69709f6517dc083a2232 200 411 - 47.050 ms
+
+info: GET /product 200 45289 - 116.200 ms
+
