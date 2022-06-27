@@ -28,8 +28,9 @@
         <th *ngFor="let col of columns" scope="col">{{ col.title }}</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let row of list | slice: startSlice:endSlice | filter: phrase:filterKey">
+    <!-- todo -->
+    <tbody *ngIf="list | filter: phrase:filterKey as li">
+      <tr filteredList=li *ngFor="let row of li | slice: startSlice:endSlice | filter: '':''">
         <td *ngFor="let col of columns">{{ row[col.key] }}</td>
         <td>
           <div
@@ -49,6 +50,7 @@
     </tbody>
   </table>
 </div>
+{{ filteredList.length }}
 <nav aria-label="Page navigation example">
   <ul class="pagination mt-4">
     <li class="page-item">

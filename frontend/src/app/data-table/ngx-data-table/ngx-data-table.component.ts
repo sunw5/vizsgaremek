@@ -25,6 +25,7 @@ export class NgxDataTableComponent<T extends { [x: string]: any }>
   phrase: string = '';
   filterKey: string = '';
 
+  filteredList!: T[];
   flattenedList: T[] = [];
 
   pageSize: number = 10;
@@ -33,13 +34,14 @@ export class NgxDataTableComponent<T extends { [x: string]: any }>
   page: number = 1;
 
   get pageList(): number[] {
-    const pageSize = Math.ceil(this.list.length / this.pageSize);
+    const pageSize = Math.ceil(this.filteredList.length / this.pageSize);
     return new Array(pageSize).fill(1).map((item, index) => index + 1);
   }
 
   constructor() {}
 
   ngOnInit(): void {
+    this.filteredList = this.list;
     this.keys = this.columns.map((column) => column.key);
     // todo avoid mutating the original list
     this.flattenedList = this.list.map((item) => {
