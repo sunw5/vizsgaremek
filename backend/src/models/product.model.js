@@ -61,7 +61,7 @@ const ProductSchema = mongoose.Schema({
     required: false,
     validate: {
         validator: function (v) {
-          return /^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{0,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}){0,50}$/.test(
+          return /^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű,\.]{0,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű,\.]{1,20}){0,50}$/.test(
             v
           );
         },

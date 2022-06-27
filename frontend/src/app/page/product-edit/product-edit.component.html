@@ -189,7 +189,7 @@
               name="soil"
               [(ngModel)]="product['Talajigény']"
               #soil="ngModel"
-              pattern="^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,20}){0,50}$"
+              pattern="^[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű,\.]{1,20}( [0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű,\.]{1,20}){0,50}$"
             />
             <div
               *ngIf="soil.invalid && (soil.dirty || soil.touched)"
