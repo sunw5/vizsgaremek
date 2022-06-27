@@ -1,9 +1,9 @@
 <div class="col-2 form-group">
   <label for="tableSearch">Keresés:</label>
   <select [(ngModel)]="filterKey" id="tableSearch" class="form-control">
-    <option value="">Oszlopban..</option>
-    <option *ngFor="let key of keys" [value]="key">
-      {{ key }}
+    <option>Oszlopban..</option>
+    <option *ngFor="let key of columns">
+      {{ key.title }}
     </option>
   </select>
 </div>
@@ -16,7 +16,8 @@
     placeholder="Search..."
   />
 </div>
-{{ phrase }}
+{{ filterKey }}
+{{ keys[filterKey] }}
 
 <div>
   <button (click)="onCreate()" class="col-12 mb-1 btn btn-success">Új {{name}} létrehozása</button>
@@ -29,7 +30,7 @@
       </tr>
     </thead>
     <!-- todo -->
-    <tbody *ngIf="list | filter: phrase:filterKey as li">
+    <tbody *ngIf="list | filter: phrase:keys[filterKey] as li">
       <tr filteredList=li *ngFor="let row of li | slice: startSlice:endSlice | filter: '':''">
         <td *ngFor="let col of columns">{{ row[col.key] }}</td>
         <td>

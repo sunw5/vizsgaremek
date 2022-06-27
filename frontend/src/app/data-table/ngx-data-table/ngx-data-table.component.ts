@@ -21,7 +21,7 @@ export class NgxDataTableComponent<T extends { [x: string]: any }>
   @Output() createOne = new EventEmitter();
 
   // filter pipe params
-  keys: string[] = [];
+  keys: {[x:string]:string} = {};
   phrase: string = '';
   filterKey: string = '';
 
@@ -42,7 +42,9 @@ export class NgxDataTableComponent<T extends { [x: string]: any }>
 
   ngOnInit(): void {
     this.filteredList = this.list;
-    this.keys = this.columns.map((column) => column.key);
+    for(const column of this.columns) {
+      this.keys[column.title] = column.key;
+    }
     // todo avoid mutating the original list
     this.flattenedList = this.list.map((item) => {
       for (const key in item) {
